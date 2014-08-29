@@ -7,25 +7,26 @@ namespace FurnitureSystem.Xml
 
     public class XmlReader
     {
-        public static List<Tuple<string, string, string>> GetObjects(string fileName)
+        public static List<Tuple<string, string, string, string>> GetObjects(string fileName)
         {
-            List<Tuple<string, string, string>>
-            shopsWithFurniture = new List<Tuple<string, string, string>>();
+            List<Tuple<string, string, string, string>>
+            shopsWithFurniture = new List<Tuple<string, string, string, string>>();
 
             XDocument xmlDoc = XDocument.Load(fileName);
 
-            //foreach (var sale in xmlDoc.Descendants("shop"))
-            //{
-            //    string vendorName = sale.Attribute("vendor").Value;
+            foreach (var shop in xmlDoc.Descendants("shop"))
+            {
+                var shopName = shop.Attribute("name").Value;
+                var shopLocation = shop.Attribute("location").Value;
 
-            //    foreach (var expense in sale.Descendants("expenses"))
-            //    {
-            //        string month = expense.Attribute("month").Value;
-            //        string value = expense.Value;
+                foreach (var furniture in shop.Descendants("furnitures"))
+                {
+                    var furnitureName = furniture.Element("name").Value;
+                    var furniturePrice = furniture.Element("price").Value;
 
-            //        shopsWithFurniture.Add(new Tuple<string, string, string>(vendorName, month, value));
-            //    }
-            //}
+                        shopsWithFurniture.Add(new Tuple<string, string, string, string>(shopName, shopLocation, furnitureName, furniturePrice));
+                }
+            }
 
             return shopsWithFurniture;
         }

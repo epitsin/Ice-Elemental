@@ -85,6 +85,13 @@
                 }
 
                 XmlWriter.GenerateReports();
+
+                var shopsWithFurniture = XmlReader.GetObjects("../../../XMLReports/ShopReport.xml");
+
+                foreach (var shop in shopsWithFurniture)
+                {
+                    Console.WriteLine(shop.Item1 + " -> " + shop.Item2 + " -> " + shop.Item3 + " -> "+ shop.Item4);
+                }
             }
         }
     }

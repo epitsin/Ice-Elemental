@@ -28,7 +28,7 @@
                     {
                         var shopInfo = new XElement("furnitures");
                         shopInfo.Add(new XElement("name", furniture.Name));
-                        shopInfo.Add(new XElement("price", furniture.Price));
+                        shopInfo.Add(new XElement("price", furniture.Price.Money));
 
                         currentShop.Add(shopInfo);
                     }
