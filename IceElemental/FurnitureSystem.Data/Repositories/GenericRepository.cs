@@ -5,7 +5,6 @@
     using System.Data.Entity.Infrastructure;
     using System.Linq;
     using System.Linq.Expressions;
-    using FurnitureSystem.Data.Repositories;
 
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
