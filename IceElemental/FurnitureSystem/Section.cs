@@ -27,5 +27,9 @@
                 this.furniturePieces = value;
             }
         }
+
+        public int ManufacturerId { get; set; }
+
+        public virtual Manufacturer Manufacturer { get; set; }
     }
 }

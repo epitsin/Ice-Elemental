@@ -19,27 +19,18 @@
 
         public int MaterialId { get; set; }
 
-        public virtual Material Material { get; set; }
+        public Material Material { get; set; }
 
         public int SectionId { get; set; }
 
-        public Section Section { get; set; }
+        public virtual Section Section { get; set; }
 
         public int PriceId { get; set; }
 
-        public Price Price { get; set; }
+        public virtual Price Price { get; set; }
 
-        public virtual ICollection<Colour> Colours
-        {
-            get
-            {
-                return this.colours;
-            }
+        public int ColourId { get; set; }
 
-            set
-            {
-                this.colours = value;
-            }
-        }
+        public virtual Colour Colour { get; set; }
     }
 }
