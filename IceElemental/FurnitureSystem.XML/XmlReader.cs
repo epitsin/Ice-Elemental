@@ -1,5 +1,4 @@
-﻿
-namespace FurnitureSystem.Xml
+﻿namespace FurnitureSystem.Xml
 {
     using System;
     using System.Collections.Generic;

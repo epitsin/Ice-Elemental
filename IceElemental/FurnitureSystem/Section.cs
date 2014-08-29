@@ -6,14 +6,14 @@
     {
         private ICollection<FurniturePiece> furniturePieces;
 
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
         public Section()
         {
             this.furniturePieces = new HashSet<FurniturePiece>();
         }
+
+        public int Id { get; set; }
+
+        public string Name { get; set; }
 
         public virtual ICollection<FurniturePiece> FurniturePieces
         {

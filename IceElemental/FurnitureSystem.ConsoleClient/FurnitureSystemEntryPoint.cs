@@ -15,7 +15,7 @@
             var database = new FurnitureSystemDbContext();
             using (database)
             {
-                var ikea =new Manufacturer
+                var ikea = new Manufacturer
                 {
                     Name = "IKEA"
                 };
@@ -70,14 +70,13 @@
                     Console.WriteLine(furn.Name);
                 }
 
-                var list = (
-                            from p in database.Shops
-                            from t in database.FurniturePieces
-                            select new
-                            {
-                                Shop = p.Name,
-                                Furniture = t.Name
-                            });
+                var list = from p in database.Shops
+                           from t in database.FurniturePieces
+                           select new
+                           {
+                               Shop = p.Name,
+                               Furniture = t.Name
+                           };
 
                 foreach (var l in list)
                 {
@@ -90,7 +89,7 @@
 
                 foreach (var shop in shopsWithFurniture)
                 {
-                    Console.WriteLine(shop.Item1 + " -> " + shop.Item2 + " -> " + shop.Item3 + " -> "+ shop.Item4);
+                    Console.WriteLine(shop.Item1 + " -> " + shop.Item2 + " -> " + shop.Item3 + " -> " + shop.Item4);
                 }
             }
         }

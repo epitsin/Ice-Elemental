@@ -1,5 +1,4 @@
-﻿
-namespace FurnitureSystem.Models
+﻿namespace FurnitureSystem.Models
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;

@@ -5,6 +5,7 @@
     public class Manufacturer
     {
         private ICollection<Section> sections;
+
         public Manufacturer()
         {
             this.sections = new HashSet<Section>();
