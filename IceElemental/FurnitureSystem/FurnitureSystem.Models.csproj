@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colour.cs" />
     <Compile Include="FurniturePiece.cs" />
     <Compile Include="Manufacturer.cs" />
     <Compile Include="Material.cs" />

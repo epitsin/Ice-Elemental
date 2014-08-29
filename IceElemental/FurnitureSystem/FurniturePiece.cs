@@ -5,10 +5,12 @@
     public class FurniturePiece
     {
         private ICollection<Price> prices;
+        private ICollection<Colour> colours;
 
         public FurniturePiece()
         {
             this.prices = new HashSet<Price>();
+            this.colours = new HashSet<Colour>();
         }
 
         public int Id { get; set; }
@@ -33,6 +35,19 @@
             set
             {
                 this.prices = value;
+            }
+        }
+
+        public virtual ICollection<Colour> Colours
+        {
+            get
+            {
+                return this.colours;
+            }
+
+            set
+            {
+                this.colours = value;
             }
         }
     }
