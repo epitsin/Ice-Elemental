@@ -34,8 +34,6 @@
             }
         }
 
-        public virtual Price PriceId { get; set; }
-
         public virtual ICollection<Price> Prices
         {
             get
