@@ -29,8 +29,17 @@
 
         public virtual Price Price { get; set; }
 
-        public int ColourId { get; set; }
+        public virtual ICollection<Colour> Colours
+        {
+            get
+            {
+                return this.colours;
+            }
 
-        public virtual Colour Colour { get; set; }
+            set
+            {
+                this.colours = value;
+            }
+        }
     }
 }
