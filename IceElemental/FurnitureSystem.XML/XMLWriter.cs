@@ -14,7 +14,7 @@
             var database = new FurnitureSystemDbContext();
             using (database)
             {
-                var root = new XElement("Shops");
+                var root = new XElement("shops with furniture");
 
                 var shopsWithFurniture = (
                             from s in database.Shops
@@ -29,13 +29,13 @@
 
                 foreach (var shop in shopsWithFurniture)
                 {
-                    var currentShop = new XElement("Shop");
+                    var currentShop = new XElement("shop");
                     currentShop.SetAttributeValue("name", shop.Shop);
-                    currentShop.SetAttributeValue("furniture", shop.Furniture);
+                    currentShop.SetAttributeValue("location", shop.Location);
 
-                    var shopInfo = new XElement("Details");
-                    shopInfo.Add(new XElement("Location", shop.Location));
-                    shopInfo.Add(new XElement("Price", shop.Price));
+                    var shopInfo = new XElement("details");
+                    shopInfo.Add(new XElement("furniture", shop.Furniture));
+                    shopInfo.Add(new XElement("price", shop.Price));
 
                     currentShop.Add(shopInfo);
                     root.Add(currentShop);
