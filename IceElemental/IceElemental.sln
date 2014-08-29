@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Data", "Fur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.ConsoleClient", "FurnitureSystem.ConsoleClient\FurnitureSystem.ConsoleClient.csproj", "{2CBF7F62-CE6E-45FD-B6AC-CC1A1684738B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Xml", "FurnitureSystem.XML\FurnitureSystem.Xml.csproj", "{542710A4-8E58-4D32-B9E8-109D1290EBEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2CBF7F62-CE6E-45FD-B6AC-CC1A1684738B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CBF7F62-CE6E-45FD-B6AC-CC1A1684738B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CBF7F62-CE6E-45FD-B6AC-CC1A1684738B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{542710A4-8E58-4D32-B9E8-109D1290EBEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{542710A4-8E58-4D32-B9E8-109D1290EBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{542710A4-8E58-4D32-B9E8-109D1290EBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{542710A4-8E58-4D32-B9E8-109D1290EBEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
