@@ -19,7 +19,7 @@ namespace FurnitureSystem.Data
 
         public IDbSet<FurniturePiece> FurniturePieces { get; set; }
 
-        public IDbSet<Shop> Shops { get; set; }
+        public IDbSet<Section> Sections { get; set; }
 
         public IDbSet<Price> Prices { get; set; }
 

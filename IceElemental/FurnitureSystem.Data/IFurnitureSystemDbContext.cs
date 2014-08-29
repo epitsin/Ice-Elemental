@@ -12,7 +12,7 @@
 
         IDbSet<FurniturePiece> FurniturePieces { get; set; }
 
-        IDbSet<Shop> Shops { get; set; }
+        IDbSet<Section> Sections { get; set; }
 
         IDbSet<Price> Prices { get; set; }
 

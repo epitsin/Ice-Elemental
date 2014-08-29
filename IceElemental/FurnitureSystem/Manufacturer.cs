@@ -4,27 +4,26 @@
 
     public class Manufacturer
     {
-        private ICollection<FurniturePiece> furniturePieces;
-
+        private ICollection<Section> sections;
         public Manufacturer()
         {
-            this.furniturePieces = new HashSet<FurniturePiece>();
+            this.sections = new HashSet<Section>();
         }
 
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public virtual ICollection<FurniturePiece> FurniturePieces
+        public virtual ICollection<Section> Sections
         {
             get
             {
-                return this.furniturePieces;
+                return this.sections;
             }
 
             set
             {
-                this.furniturePieces = value;
+                this.sections = value;
             }
         }
     }

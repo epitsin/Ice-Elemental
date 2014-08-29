@@ -2,19 +2,19 @@
 {
     using System.Collections.Generic;
 
-    public class Shop
+    public class Section
     {
         private ICollection<FurniturePiece> furniturePieces;
-
-        public Shop()
-        {
-            this.furniturePieces = new HashSet<FurniturePiece>();
-        }
 
         public int Id { get; set; }
 
         public string Name { get; set; }
-        
+
+        public Section()
+        {
+            this.furniturePieces = new HashSet<FurniturePiece>();
+        }
+
         public virtual ICollection<FurniturePiece> FurniturePieces
         {
             get
