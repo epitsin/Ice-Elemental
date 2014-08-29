@@ -5,6 +5,7 @@
     public class Shop
     {
         private ICollection<FurniturePiece> furniturePieces;
+
         public Shop()
         {
             this.furniturePieces = new HashSet<FurniturePiece>();

@@ -5,10 +5,12 @@
     public class Manufacturer
     {
         private ICollection<FurniturePiece> furniturePieces;
+
         public Manufacturer()
         {
             this.furniturePieces = new HashSet<FurniturePiece>();
         }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
