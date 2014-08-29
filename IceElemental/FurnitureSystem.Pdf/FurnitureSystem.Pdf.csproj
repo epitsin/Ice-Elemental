@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2CBF7F62-CE6E-45FD-B6AC-CC1A1684738B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{1E9C81A7-3BCA-4590-856A-0DB295ED2CD6}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FurnitureSystem.ConsoleClient</RootNamespace>
-    <AssemblyName>FurnitureSystem.ConsoleClient</AssemblyName>
+    <RootNamespace>FurnitureSystem.Pdf</RootNamespace>
+    <AssemblyName>FurnitureSystem.Pdf</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -38,9 +36,14 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=4.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,30 +51,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FurnitureSystemEntryPoint.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="PdfBuilder.cs" />
+    <Compile Include="PdfExporter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FurnitureSystem.Data\FurnitureSystem.Data.csproj">
       <Project>{928dc2fa-787f-4df1-b592-7392adcdabee}</Project>
       <Name>FurnitureSystem.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FurnitureSystem.Pdf\FurnitureSystem.Pdf.csproj">
-      <Project>{1e9c81a7-3bca-4590-856a-0db295ed2cd6}</Project>
-      <Name>FurnitureSystem.Pdf</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FurnitureSystem.XML\FurnitureSystem.Xml.csproj">
-      <Project>{542710a4-8e58-4d32-b9e8-109d1290ebeb}</Project>
-      <Name>FurnitureSystem.Xml</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FurnitureSystem\FurnitureSystem.Models.csproj">
       <Project>{c8a225e8-e96e-4fd4-b8dd-729f36959856}</Project>
       <Name>FurnitureSystem.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="libs\itextsharp.dll.refresh" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libs\itextsharp.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

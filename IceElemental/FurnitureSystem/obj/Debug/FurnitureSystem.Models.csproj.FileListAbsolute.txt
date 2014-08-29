@@ -6,6 +6,5 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\bin\D
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\bin\Debug\EntityFramework.xml
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\obj\Debug\FurnitureSystem.Models.csprojResolveAssemblyReference.cache
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\obj\Debug\FurnitureSystem.Models.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\obj\Debug\FurnitureSystem.Models.pdb

@@ -7,6 +7,7 @@
     using FurnitureSystem.Models;
     using FurnitureSystem.Models.Enums;
     using FurnitureSystem.Xml;
+    using FurnitureSystem.Pdf;
 
     public class FurnitureSystemEntryPoint
     {
@@ -91,6 +92,9 @@
                 {
                     Console.WriteLine(shop.Item1 + " -> " + shop.Item2 + " -> " + shop.Item3 + " -> " + shop.Item4);
                 }
+
+                
+                PdfExporter.Export();
             }
         }
     }
