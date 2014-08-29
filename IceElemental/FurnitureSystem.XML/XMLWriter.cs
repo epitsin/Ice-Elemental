@@ -2,7 +2,6 @@
 {
     using System.Linq;
     using System.Xml.Linq;
-    using System.Data.Entity;
 
     using FurnitureSystem.Data;
 
@@ -14,32 +13,29 @@
             var database = new FurnitureSystemDbContext();
             using (database)
             {
-                var root = new XElement("shops with furniture");
+                var root = new XElement("shops-with-furniture");
 
-                var shopsWithFurniture = (
-                            from s in database.Shops
-                            from f in database.FurniturePieces
-                            select new
-                            {
-                                Shop = s.Name,
-                                Location = s.Location.City + s.Location.Street + s.Location.Number,
-                                Furniture = f.Name,
-                                Price = f.Price
-                            });
+                var shops = database.Shops;
 
-                foreach (var shop in shopsWithFurniture)
+                foreach (var shop in shops)
                 {
+                    var furnitures = shop.FurniturePieces;
                     var currentShop = new XElement("shop");
-                    currentShop.SetAttributeValue("name", shop.Shop);
-                    currentShop.SetAttributeValue("location", shop.Location);
+                    currentShop.SetAttributeValue("name", shop.Name);
+                    currentShop.SetAttributeValue("location", shop.Location.City + shop.Location.Street + shop.Location.Number);
 
-                    var shopInfo = new XElement("details");
-                    shopInfo.Add(new XElement("furniture", shop.Furniture));
-                    shopInfo.Add(new XElement("price", shop.Price));
+                    foreach (var furniture in furnitures)
+                    {
+                        var shopInfo = new XElement("furnitures");
+                        shopInfo.Add(new XElement("name", furniture.Name));
+                        shopInfo.Add(new XElement("price", furniture.Price));
 
-                    currentShop.Add(shopInfo);
+                        currentShop.Add(shopInfo);
+                    }
+
                     root.Add(currentShop);
                 }
+
                 root.Save(path);
             }
         }
