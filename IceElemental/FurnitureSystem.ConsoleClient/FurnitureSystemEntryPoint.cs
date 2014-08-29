@@ -13,12 +13,31 @@
             var database = new FurnitureSystemDbContext();
             using (database)
             {
-                database.Manufacturers.Add(new Manufacturer
+                var ikea =new Manufacturer
                 {
                     Name = "IKEA"
-                });
-                database.SaveChanges();
+                };
 
+                var kitchen = new Section
+                    {
+                        Name = "Kitchen"
+                    };
+
+                kitchen.FurniturePieces.Add(new FurniturePiece
+                    {
+                        Name = "Pesho",
+                        Type = FurnitureType.Chair,
+                        Material = Material.Wooden,
+                        Price = new Price
+                        {
+                            Money = 15.50m
+                        }
+                    });
+
+                ikea.Sections.Add(kitchen);
+
+                    
+                database.Manufacturers.Add(ikea);
                 var manufacturers = database.Manufacturers.ToList();
 
                 foreach (var man in manufacturers)

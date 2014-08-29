@@ -4,18 +4,18 @@
 
     public class FurniturePiece
     {
-        private ICollection<Price> prices;
         private ICollection<Colour> colours;
 
         public FurniturePiece()
         {
-            this.prices = new HashSet<Price>();
             this.colours = new HashSet<Colour>();
         }
 
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public FurnitureType Type { get; set; }
 
         public int MaterialId { get; set; }
 
@@ -25,18 +25,9 @@
 
         public Section Section { get; set; }
 
-        public virtual ICollection<Price> Prices
-        {
-            get
-            {
-                return this.prices;
-            }
+        public int PriceId { get; set; }
 
-            set
-            {
-                this.prices = value;
-            }
-        }
+        public Price Price { get; set; }
 
         public virtual ICollection<Colour> Colours
         {
