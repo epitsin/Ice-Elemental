@@ -21,6 +21,8 @@ namespace FurnitureSystem.Data
 
         public IDbSet<Section> Sections { get; set; }
 
+        public IDbSet<Colour> Colours { get; set; }
+
         public IDbSet<Price> Prices { get; set; }
 
         public new IDbSet<T> Set<T>() where T : class

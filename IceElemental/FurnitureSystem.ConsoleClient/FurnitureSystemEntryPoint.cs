@@ -38,11 +38,13 @@
 
                     
                 database.Manufacturers.Add(ikea);
-                var manufacturers = database.Manufacturers.ToList();
+                database.SaveChanges();
 
-                foreach (var man in manufacturers)
+                var f = database.FurniturePieces.ToList();
+
+                foreach (var furn in f)
                 {
-                    Console.WriteLine(man.Name);
+                    Console.WriteLine(furn.Name);
                 }
             }
         }

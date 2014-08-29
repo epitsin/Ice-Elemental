@@ -14,6 +14,8 @@
 
         IDbSet<Section> Sections { get; set; }
 
+        IDbSet<Colour> Colours { get; set; }
+
         IDbSet<Price> Prices { get; set; }
 
         IDbSet<T> Set<T>() where T : class;
