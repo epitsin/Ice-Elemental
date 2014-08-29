@@ -54,15 +54,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FurnitureSystemDbContext.cs" />
+    <Compile Include="IFurnitureSystemDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IGenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\FurnitureSystem\FurnitureSystem.Models.csproj">
+      <Project>{c8a225e8-e96e-4fd4-b8dd-729f36959856}</Project>
+      <Name>FurnitureSystem.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
