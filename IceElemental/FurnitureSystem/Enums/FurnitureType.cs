@@ -1,4 +1,4 @@
-﻿namespace FurnitureSystem.Models
+﻿namespace FurnitureSystem.Models.Enums
 {
     public enum FurnitureType
     {
@@ -6,6 +6,12 @@
         Table,
         Bed,
         Desk,
-        Cupboard
+        Cupboard,
+        Sofa,
+        ArmChair,
+        Lamp,
+        Mirror,
+        Painting,
+        BookShelf
     }
 }

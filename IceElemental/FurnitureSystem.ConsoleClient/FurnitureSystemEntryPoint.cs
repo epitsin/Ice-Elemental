@@ -5,6 +5,7 @@
 
     using FurnitureSystem.Data;
     using FurnitureSystem.Models;
+    using FurnitureSystem.Models.Enums;
 
     public class FurnitureSystemEntryPoint
     {

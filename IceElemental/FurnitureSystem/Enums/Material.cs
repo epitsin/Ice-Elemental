@@ -1,4 +1,4 @@
-﻿namespace FurnitureSystem.Models
+﻿namespace FurnitureSystem.Models.Enums
 {
     public enum Material
     {

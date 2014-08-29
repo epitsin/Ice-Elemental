@@ -1,6 +1,7 @@
 ﻿namespace FurnitureSystem.Models
 {
     using System.Collections.Generic;
+    using FurnitureSystem.Models.Enums;
 
     public class FurniturePiece
     {
