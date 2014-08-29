@@ -1,0 +1,15 @@
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\obj\Debug\FurnitureSystem.Pdf.csprojResolveAssemblyReference.cache
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Pdf.dll.config
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Pdf.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Pdf.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\EntityFramework.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Data.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Models.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\itextsharp.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Data.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Models.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\EntityFramework.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\obj\Debug\FurnitureSystem.Pdf.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\obj\Debug\FurnitureSystem.Pdf.pdb
