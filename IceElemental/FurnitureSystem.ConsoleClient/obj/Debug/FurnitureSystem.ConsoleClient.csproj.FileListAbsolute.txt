@@ -1,0 +1,16 @@
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.ConsoleClient.exe.config
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\obj\Debug\FurnitureSystem.ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.ConsoleClient.exe
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.ConsoleClient.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\EntityFramework.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Data.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Models.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Data.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Models.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\EntityFramework.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\obj\Debug\FurnitureSystem.ConsoleClient.exe
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\obj\Debug\FurnitureSystem.ConsoleClient.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Xml.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Xml.pdb
