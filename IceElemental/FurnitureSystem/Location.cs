@@ -1,8 +1,13 @@
-﻿namespace FurnitureSystem.Models
+﻿
+namespace FurnitureSystem.Models
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class Location
     {
-        public int Id { get; set; }
+        [Key, ForeignKey("Shop")]
+        public int ShopId { get; set; }
 
         public string Country { get; set; }
 
@@ -11,8 +16,6 @@
         public string Street { get; set; }
 
         public int Number { get; set; }
-
-        public int ShopId { get; set; }
 
         public virtual Shop Shop { get; set; }
     }
