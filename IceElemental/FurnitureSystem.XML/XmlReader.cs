@@ -7,10 +7,10 @@ namespace FurnitureSystem.Xml
 
     public class XmlReader
     {
-        public static List<Tuple<string, string, string, string>> GetObjects(string fileName)
+        public static List<Tuple<string, string, string, decimal>> GetObjects(string fileName)
         {
-            List<Tuple<string, string, string, string>>
-            shopsWithFurniture = new List<Tuple<string, string, string, string>>();
+            List<Tuple<string, string, string, decimal>>
+            shopsWithFurniture = new List<Tuple<string, string, string, decimal>>();
 
             XDocument xmlDoc = XDocument.Load(fileName);
 
@@ -24,7 +24,7 @@ namespace FurnitureSystem.Xml
                     var furnitureName = furniture.Element("name").Value;
                     var furniturePrice = furniture.Element("price").Value;
 
-                        shopsWithFurniture.Add(new Tuple<string, string, string, string>(shopName, shopLocation, furnitureName, furniturePrice));
+                        shopsWithFurniture.Add(new Tuple<string, string, string, decimal>(shopName, shopLocation, furnitureName, decimal.Parse(furniturePrice)));
                 }
             }
 
