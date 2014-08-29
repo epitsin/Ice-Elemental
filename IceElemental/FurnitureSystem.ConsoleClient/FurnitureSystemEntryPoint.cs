@@ -31,6 +31,10 @@
                         Price = new Price
                         {
                             Money = 15.50m
+                        },
+                        Colour = new Colour
+                        {
+                            Name = "Yellow"
                         }
                     });
 
