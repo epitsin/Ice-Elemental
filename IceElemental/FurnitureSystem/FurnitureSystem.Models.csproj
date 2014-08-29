@@ -55,11 +55,11 @@
     <Compile Include="FurniturePiece.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Manufacturer.cs" />
-    <Compile Include="Material.cs" />
+    <Compile Include="Enums\Material.cs" />
     <Compile Include="Price.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Section.cs" />
-    <Compile Include="FurnitureType.cs" />
+    <Compile Include="Enums\FurnitureType.cs" />
     <Compile Include="Shop.cs" />
   </ItemGroup>
   <ItemGroup>
