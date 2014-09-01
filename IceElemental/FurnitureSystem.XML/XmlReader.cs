@@ -6,25 +6,19 @@
 
     public class XmlReader
     {
-        public static List<Tuple<string, string, string, decimal>> GetObjects(string fileName)
+        public static List<Tuple<string, int>> GetObjects(string fileName)
         {
-            List<Tuple<string, string, string, decimal>>
-            shopsWithFurniture = new List<Tuple<string, string, string, decimal>>();
+            var shopsWithFurniture = new List<Tuple<string, int>>();
 
-            XDocument xmlDoc = XDocument.Load(fileName);
+            var xmlDoc = XDocument.Load(fileName);
 
-            foreach (var shop in xmlDoc.Descendants("shop"))
+
+            foreach (var furniture in xmlDoc.Descendants("furnitures"))
             {
-                var shopName = shop.Attribute("name").Value;
-                var shopLocation = shop.Attribute("location").Value;
+                var furnitureName = furniture.Element("name").Value;
+                var shopName = furniture.Element("discount").Value;
 
-                foreach (var furniture in shop.Descendants("furnitures"))
-                {
-                    var furnitureName = furniture.Element("name").Value;
-                    var furniturePrice = furniture.Element("price").Value;
-
-                    shopsWithFurniture.Add(new Tuple<string, string, string, decimal>(shopName, shopLocation, furnitureName, decimal.Parse(furniturePrice)));
-                }
+                shopsWithFurniture.Add(new Tuple<string, int>(furnitureName, int.Parse(shopName)));
             }
 
             return shopsWithFurniture;

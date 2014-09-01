@@ -109,6 +109,24 @@
 
             //    PdfExporter.Export();
             //}
+
+            var database = new FurnitureSystemDbContext();
+            using (database)
+            {
+                var furnitureWithDelivery = XmlReader.GetObjects("../../../XMLReports/Delivery.xml");
+
+                foreach (var shop in furnitureWithDelivery)
+                {
+                    var prices = database.FurniturePieces.Where(x => x.Name == shop.Item1).Select(x => x.Price);
+                    foreach (var price in prices)
+                    {
+                        Console.WriteLine(price.Money);
+                        price.Money -= shop.Item2;
+                    }
+                }
+
+                database.SaveChanges();
+            }
         }
     }
 }

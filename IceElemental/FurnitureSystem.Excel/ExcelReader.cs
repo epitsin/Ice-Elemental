@@ -8,6 +8,8 @@
 
     public class ExcelReader
     {
+        //TO DO: returns list of products
+
         // private const string Provider = "Provider=Microsoft.ACE.OLEDB.12.0;";
         // private const string ExtendedProperties = @";Extended Properties='Excel 12.0 xml;HDR=Yes';";
         public IList<Tuple<string, string>> GetExtractedFilesInfo(string extractionPath)
