@@ -4,28 +4,15 @@
 
     public class Colour
     {
-        private ICollection<FurniturePiece> furniturePieces;
-        
         public Colour()
         {
-            this.furniturePieces = new HashSet<FurniturePiece>();
+            this.FurniturePieces = new HashSet<FurniturePiece>();
         }
+
+        public virtual ICollection<FurniturePiece> FurniturePieces { get; set; }
 
         public int Id { get; set; }
 
         public string Name { get; set; }
-
-        public virtual ICollection<FurniturePiece> FurniturePieces
-        {
-            get
-            {
-                return this.furniturePieces;
-            }
-
-            set
-            {
-                this.furniturePieces = value;
-            }
-        }
     }
 }

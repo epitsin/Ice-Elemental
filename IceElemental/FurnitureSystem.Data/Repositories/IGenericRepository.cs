@@ -6,16 +6,16 @@
 
     public interface IGenericRepository<T> where T : class
     {
-        IQueryable<T> All();
-
-        IQueryable<T> SearchFor(Expression<Func<T, bool>> conditions);
-
         void Add(T entity);
 
-        void Update(T entity);
+        IQueryable<T> All();
 
         void Delete(T entity);
 
         void Detach(T entity);
+
+        IQueryable<T> SearchFor(Expression<Func<T, bool>> conditions);
+
+        void Update(T entity);
     }
 }

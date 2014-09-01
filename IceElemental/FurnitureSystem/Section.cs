@@ -4,32 +4,19 @@
 
     public class Section
     {
-        private ICollection<FurniturePiece> furniturePieces;
-
         public Section()
         {
-            this.furniturePieces = new HashSet<FurniturePiece>();
+            this.FurniturePieces = new HashSet<FurniturePiece>();
         }
+
+        public virtual ICollection<FurniturePiece> FurniturePieces { get; set; }
 
         public int Id { get; set; }
 
-        public string Name { get; set; }
-
-        public virtual ICollection<FurniturePiece> FurniturePieces
-        {
-            get
-            {
-                return this.furniturePieces;
-            }
-
-            set
-            {
-                this.furniturePieces = value;
-            }
-        }
+        public virtual Manufacturer Manufacturer { get; set; }
 
         public int ManufacturerId { get; set; }
 
-        public virtual Manufacturer Manufacturer { get; set; }
+        public string Name { get; set; }
     }
 }

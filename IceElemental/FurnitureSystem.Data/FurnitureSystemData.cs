@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-
     using FurnitureSystem.Data.Repositories;
     using FurnitureSystem.Models;
 
@@ -24,7 +23,6 @@
         }
 
         //// should we have such property for all classes????????????????????
-
         public IGenericRepository<FurniturePiece> FurniturePieces
         {
             get

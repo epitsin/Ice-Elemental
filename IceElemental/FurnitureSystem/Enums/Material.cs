@@ -3,8 +3,11 @@
     public enum Material
     {
         Wooden,
+
         Plastic,
+
         Steel,
+
         Glass
     }
 }

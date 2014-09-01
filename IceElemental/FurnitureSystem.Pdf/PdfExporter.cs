@@ -4,7 +4,6 @@
     using System.IO;
     using System.Linq;
     using System.Text;
-
     using FurnitureSystem.Data;
     using iTextSharp.text;
 
@@ -38,16 +37,16 @@
 
                 var shopName = shops[i];
                 var furnitures =
-                    from s in database.Shops
-                    from f in database.FurniturePieces
-                    where s.Name == shopName
-                    select new
-                    {
-                        Name = f.Name,
-                        Section = f.Section.Name,
-                        Price = f.Price,
-                        Colour = f.Colours.FirstOrDefault().Name
-                    };
+                                from s in database.Shops
+                                from f in database.FurniturePieces
+                                where s.Name == shopName
+                                select new
+                                {
+                                    Name = f.Name,
+                                    Section = f.Section.Name,
+                                    Price = f.Price,
+                                    Colour = f.Colours.FirstOrDefault().Name
+                                };
 
                 foreach (var furniture in furnitures)
                 {
@@ -73,12 +72,12 @@
 
             var file = builder.RenderPdf();
             var tempFolder = "../../../PDFReports/";
-            var tempFileName = DateTime.Now.ToString("yyyy-MM-dd") + "-" + Guid.NewGuid() + ".pdf";
+            var tempFileName = string.Format("{0}-{1}.pdf", DateTime.Now.ToString("yyyy-MM-dd"), Guid.NewGuid());
             if (Helpers.DirectoryExist(tempFolder))
             {
-                if (!File.Exists(tempFolder + tempFileName))
+                if (!File.Exists(string.Format("{0}{1}", tempFolder, tempFileName)))
                 {
-                    File.WriteAllBytes(tempFolder + tempFileName, file);
+                    File.WriteAllBytes(string.Format("{0}{1}", tempFolder, tempFileName), file);
                 }
             }
         }

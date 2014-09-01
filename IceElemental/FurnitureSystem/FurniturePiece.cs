@@ -5,57 +5,32 @@
 
     public class FurniturePiece
     {
-        private ICollection<Colour> colours;
-        private ICollection<Shop> shops;
-
         public FurniturePiece()
         {
-            this.colours = new HashSet<Colour>();
-            this.shops = new HashSet<Shop>();
+            this.Colours = new HashSet<Colour>();
+            this.Shops = new HashSet<Shop>();
         }
+
+        public virtual ICollection<Colour> Colours { get; set; }
 
         public int Id { get; set; }
 
-        public string Name { get; set; }
-
-        public FurnitureType Type { get; set; }
+        public Material Material { get; set; }
 
         public int MaterialId { get; set; }
 
-        public Material Material { get; set; }
-
-        public int SectionId { get; set; }
-
-        public virtual Section Section { get; set; }
-
-        public int PriceId { get; set; }
+        public string Name { get; set; }
 
         public virtual Price Price { get; set; }
 
-        public virtual ICollection<Shop> Shops
-        {
-            get
-            {
-                return this.shops;
-            }
+        public int PriceId { get; set; }
 
-            set
-            {
-                this.shops = value;
-            }
-        }
+        public virtual Section Section { get; set; }
 
-        public virtual ICollection<Colour> Colours
-        {
-            get
-            {
-                return this.colours;
-            }
+        public int SectionId { get; set; }
 
-            set
-            {
-                this.colours = value;
-            }
-        }
+        public virtual ICollection<Shop> Shops { get; set; }
+
+        public FurnitureType Type { get; set; }
     }
 }

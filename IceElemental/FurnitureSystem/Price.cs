@@ -4,28 +4,15 @@
 
     public class Price
     {
-        private ICollection<FurniturePiece> furniturePieces;
-
         public Price()
         {
-            this.furniturePieces = new HashSet<FurniturePiece>();
+            this.FurniturePieces = new HashSet<FurniturePiece>();
         }
+
+        public virtual ICollection<FurniturePiece> FurniturePieces { get; set; }
 
         public int Id { get; set; }
 
         public decimal Money { get; set; }
-
-        public virtual ICollection<FurniturePiece> FurniturePieces
-        {
-            get
-            {
-                return this.furniturePieces;
-            }
-
-            set
-            {
-                this.furniturePieces = value;
-            }
-        }
     }
 }

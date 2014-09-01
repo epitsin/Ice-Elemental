@@ -18,26 +18,15 @@
             this.set = context.Set<T>();
         }
 
-        public IQueryable<T> All()
-        {
-            return this.set.AsQueryable();
-        }
-
-        public IQueryable<T> SearchFor(Expression<Func<T, bool>> conditions)
-        {
-            return this.All().Where(conditions);
-        }
-
         public void Add(T entity)
         {
             var entry = this.AttachIfDetached(entity);
             entry.State = EntityState.Added;
         }
 
-        public void Update(T entity)
+        public IQueryable<T> All()
         {
-            var entry = this.AttachIfDetached(entity);
-            entry.State = EntityState.Modified;
+            return this.set.AsQueryable();
         }
 
         public void Delete(T entity)
@@ -50,6 +39,17 @@
         {
             var entry = this.context.Entry(entity);
             entry.State = EntityState.Detached;
+        }
+
+        public IQueryable<T> SearchFor(Expression<Func<T, bool>> conditions)
+        {
+            return this.All().Where(conditions);
+        }
+
+        public void Update(T entity)
+        {
+            var entry = this.AttachIfDetached(entity);
+            entry.State = EntityState.Modified;
         }
 
         private DbEntityEntry AttachIfDetached(T entity)

@@ -2,12 +2,11 @@
 {
     using System;
     using System.Linq;
-
     using FurnitureSystem.Data;
     using FurnitureSystem.Models;
     using FurnitureSystem.Models.Enums;
-    using FurnitureSystem.Xml;
     using FurnitureSystem.Pdf;
+    using FurnitureSystem.Xml;
 
     public class FurnitureSystemEntryPoint
     {
@@ -22,17 +21,17 @@
                 };
 
                 var kitchen = new Section
-                    {
-                        Name = "Kitchen"
-                    };
+                {
+                    Name = "Kitchen"
+                };
 
                 var alfredoLocation = new Location
-                    {
-                        Country = "BG",
-                        City = "Sofia",
-                        Street = "Malinov",
-                        Number = 50
-                    };
+                {
+                    Country = "BG",
+                    City = "Sofia",
+                    Street = "Malinov",
+                    Number = 50
+                };
 
                 var alfredo = new Shop
                 {
@@ -44,15 +43,15 @@
                 database.SaveChanges();
 
                 var chair = new FurniturePiece
+                {
+                    Name = "Pesho",
+                    Type = FurnitureType.Chair,
+                    Material = Material.Wooden,
+                    Price = new Price
                     {
-                        Name = "Pesho",
-                        Type = FurnitureType.Chair,
-                        Material = Material.Wooden,
-                        Price = new Price
-                        {
-                            Money = 15.50m
-                        }
-                    };
+                        Money = 15.50m
+                    }
+                };
 
                 chair.Shops.Add(alfredo);
 
@@ -81,7 +80,7 @@
 
                 foreach (var l in list)
                 {
-                    Console.WriteLine(l.Shop + " " + l.Furniture);
+                    Console.WriteLine(string.Format("{0} {1}", l.Shop, l.Furniture));
                 }
 
                 XmlWriter.GenerateReports();
@@ -90,10 +89,9 @@
 
                 foreach (var shop in shopsWithFurniture)
                 {
-                    Console.WriteLine(shop.Item1 + " -> " + shop.Item2 + " -> " + shop.Item3 + " -> " + shop.Item4);
+                    Console.WriteLine(string.Format("{0} -> {1} -> {2} -> {3}", shop.Item1, shop.Item2, shop.Item3, shop.Item4));
                 }
 
-                
                 PdfExporter.Export();
             }
         }

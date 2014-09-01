@@ -23,7 +23,7 @@
                     var furnitureName = furniture.Element("name").Value;
                     var furniturePrice = furniture.Element("price").Value;
 
-                        shopsWithFurniture.Add(new Tuple<string, string, string, decimal>(shopName, shopLocation, furnitureName, decimal.Parse(furniturePrice)));
+                    shopsWithFurniture.Add(new Tuple<string, string, string, decimal>(shopName, shopLocation, furnitureName, decimal.Parse(furniturePrice)));
                 }
             }
 

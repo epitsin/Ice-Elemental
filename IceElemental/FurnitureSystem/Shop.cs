@@ -5,32 +5,19 @@
 
     public class Shop
     {
-        private ICollection<FurniturePiece> furniturePieces;
-        
         public Shop()
         {
-            this.furniturePieces = new HashSet<FurniturePiece>();
+            this.FurniturePieces = new HashSet<FurniturePiece>();
         }
+
+        public virtual ICollection<FurniturePiece> FurniturePieces { get; set; }
 
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
-        
-        [Required]
         public virtual Location Location { get; set; }
 
-        public virtual ICollection<FurniturePiece> FurniturePieces
-        {
-            get
-            {
-                return this.furniturePieces;
-            }
-
-            set
-            {
-                this.furniturePieces = value;
-            }
-        }
+        [Required]
+        public string Name { get; set; }
     }
 }

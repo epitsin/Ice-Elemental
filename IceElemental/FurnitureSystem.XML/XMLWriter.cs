@@ -2,7 +2,6 @@
 {
     using System.Linq;
     using System.Xml.Linq;
-
     using FurnitureSystem.Data;
 
     public class XmlWriter
@@ -22,7 +21,7 @@
                     var furnitures = shop.FurniturePieces;
                     var currentShop = new XElement("shop");
                     currentShop.SetAttributeValue("name", shop.Name);
-                    currentShop.SetAttributeValue("location", shop.Location.City + shop.Location.Street + shop.Location.Number);
+                    currentShop.SetAttributeValue("location", string.Format("{0}{1}{2}", shop.Location.City, shop.Location.Street, shop.Location.Number));
 
                     foreach (var furniture in furnitures)
                     {

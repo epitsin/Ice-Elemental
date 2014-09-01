@@ -1,39 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using iTextSharp.text;
-using iTextSharp.text.html;
-using iTextSharp.text.html.simpleparser;
-using iTextSharp.text.pdf;
-
-namespace FurnitureSystem.Pdf
+﻿namespace FurnitureSystem.Pdf
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using iTextSharp.text;
+    using iTextSharp.text.html;
+    using iTextSharp.text.html.simpleparser;
+    using iTextSharp.text.pdf;
+
     public class PdfBuilder
     {
-        #region HtmlToPdfBuilder Class
+        /// <summary>
+        /// Delegate for rendering events
+        /// </summary>
+        public delegate void RenderEvent(PdfWriter writer, Document document);
+
+        /// <summary>
+        /// A page to insert into a HtmlToPdfBuilder Class
+        /// </summary>
+        public class HtmlPdfPage
+        {
+            //parts for generating the page
+            internal StringBuilder Html;
+
+            /// <summary>
+            /// The default information for this page
+            /// </summary>
+            public HtmlPdfPage()
+            {
+                this.Html = new StringBuilder();
+            }
+
+            /// <summary>
+            /// Appends the formatted HTML onto a page
+            /// </summary>
+            public virtual void AppendHtml(string content, params object[] values)
+            {
+                this.Html.AppendFormat(content, values);
+            }
+        }
 
         /// <summary>
         /// Simplifies generating HTML into a PDF file -http://aspnettutorialonline.blogspot.com/
         /// </summary>
         public class HtmlToPdfBuilder
         {
+            private const string DocumentHtmlEnd = "</body></html>";
 
-            #region Constants
-
-            private const string STYLE_DEFAULT_TYPE = "style";
-            private const string DOCUMENT_HTML_START = "<html><head></head><body>";
-            private const string DOCUMENT_HTML_END = "</body></html>";
-            private const string REGEX_GROUP_SELECTOR = "selector";
-            private const string REGEX_GROUP_STYLE = "style";
+            private const string DocumentHtmlStart = "<html><head></head><body>";
 
             //amazing regular expression magic
-            private const string REGEX_GET_STYLES = @"(?<selector>[^\{\s]+\w+(\s\[^\{\s]+)?)\s?\{(?<style>[^\}]*)\}";
+            private const string RegexGetStyles = @"(?<selector>[^\{\s]+\w+(\s\[^\{\s]+)?)\s?\{(?<style>[^\}]*)\}";
 
-            #endregion
+            private const string RegexGroupSelector = "selector";
 
-            #region Constructors
+            private const string RegexGroupStyle = "style";
+
+            private const string StyleDefaultType = "style";
+
+            private readonly List<HtmlPdfPage> pages;
+
+            private readonly StyleSheet styles;
 
             /// <summary>
             /// Creates a new PDF document template. Use PageSizes.{DocumentSize}
@@ -41,13 +70,14 @@ namespace FurnitureSystem.Pdf
             public HtmlToPdfBuilder(Rectangle size)
             {
                 this.PageSize = size;
-                this._Pages = new List<HtmlPdfPage>();
-                this._Styles = new StyleSheet();
+                this.pages = new List<HtmlPdfPage>();
+                this.styles = new StyleSheet();
             }
 
-            #endregion
-
-            #region Delegates
+            /// <summary>
+            /// Method to override to have additional control over the document
+            /// </summary>
+            public event RenderEvent AfterRender;
 
             /// <summary>
             /// Method to override to have additional control over the document
@@ -55,13 +85,15 @@ namespace FurnitureSystem.Pdf
             public event RenderEvent BeforeRender;
 
             /// <summary>
-            /// Method to override to have additional control over the document
+            /// Returns a list of the pages available
             /// </summary>
-            public event RenderEvent AfterRender;
-
-            #endregion
-
-            #region Properties
+            public HtmlPdfPage[] Pages
+            {
+                get
+                {
+                    return this.pages.ToArray(); //http://aspnettutorialonline.blogspot.com/
+                }
+            }
 
             /// <summary>
             /// The page size to make this document
@@ -75,31 +107,9 @@ namespace FurnitureSystem.Pdf
             {
                 get
                 {
-                    return this._Pages[index];
+                    return this.pages[index];
                 }
             }
-
-            /// <summary>
-            /// Returns a list of the pages available
-            /// </summary>
-            public HtmlPdfPage[] Pages
-            {
-                get
-                {
-                    return this._Pages.ToArray(); //http://aspnettutorialonline.blogspot.com/
-                }
-            }
-
-            #endregion
-
-            #region Members
-
-            private List<HtmlPdfPage> _Pages;
-            private StyleSheet _Styles;
-
-            #endregion
-
-            #region Working With The Document
 
             /// <summary>
             /// Appends and returns a new page for this document http://aspnettutorialonline.blogspot.com/
@@ -107,16 +117,8 @@ namespace FurnitureSystem.Pdf
             public HtmlPdfPage AddPage()
             {
                 HtmlPdfPage page = new HtmlPdfPage();
-                this._Pages.Add(page);
+                this.pages.Add(page);
                 return page;
-            }
-
-            /// <summary>
-            /// Removes the page from the document http://aspnettutorialonline.blogspot.com/
-            /// </summary>
-            public void RemovePage(HtmlPdfPage page)
-            {
-                this._Pages.Remove(page);
             }
 
             /// <summary>
@@ -124,7 +126,7 @@ namespace FurnitureSystem.Pdf
             /// </summary>
             public void AddStyle(string selector, string styles)
             {
-                this._Styles.LoadTagStyle(selector, HtmlToPdfBuilder.STYLE_DEFAULT_TYPE, styles);
+                this.styles.LoadTagStyle(selector, HtmlToPdfBuilder.StyleDefaultType, styles);
             }
 
             /// <summary>
@@ -132,34 +134,16 @@ namespace FurnitureSystem.Pdf
             /// </summary>
             public void ImportStylesheet(string path)
             {
-
                 //load the file
                 string content = File.ReadAllText(path);
 
                 //use a little regular expression magic
-                foreach (Match match in Regex.Matches(content, HtmlToPdfBuilder.REGEX_GET_STYLES))
+                foreach (Match match in Regex.Matches(content, HtmlToPdfBuilder.RegexGetStyles))
                 {
-                    string selector = match.Groups[HtmlToPdfBuilder.REGEX_GROUP_SELECTOR].Value;
-                    string style = match.Groups[HtmlToPdfBuilder.REGEX_GROUP_STYLE].Value;
+                    string selector = match.Groups[HtmlToPdfBuilder.RegexGroupSelector].Value;
+                    string style = match.Groups[HtmlToPdfBuilder.RegexGroupStyle].Value;
                     this.AddStyle(selector, style);
                 }
-
-            }
-
-
-            #endregion
-
-            #region Document Navigation
-
-            /// <summary>
-            /// Moves a page before another
-            /// </summary>
-            public void InsertBefore(HtmlPdfPage page, HtmlPdfPage before)
-            {
-                this._Pages.Remove(page);
-                this._Pages.Insert(
-                    Math.Max(this._Pages.IndexOf(before), 0),
-                    page);
             }
 
             /// <summary>
@@ -167,23 +151,36 @@ namespace FurnitureSystem.Pdf
             /// </summary>
             public void InsertAfter(HtmlPdfPage page, HtmlPdfPage after)
             {
-                this._Pages.Remove(page);
-                this._Pages.Insert(
-                    Math.Min(this._Pages.IndexOf(after) + 1, this._Pages.Count),
+                this.pages.Remove(page);
+                this.pages.Insert(
+                    Math.Min(this.pages.IndexOf(after) + 1, this.pages.Count),
                     page);
             }
 
+            /// <summary>
+            /// Moves a page before another
+            /// </summary>
+            public void InsertBefore(HtmlPdfPage page, HtmlPdfPage before)
+            {
+                this.pages.Remove(page);
+                this.pages.Insert(
+                    Math.Max(this.pages.IndexOf(before), 0),
+                    page);
+            }
 
-            #endregion
-
-            #region Rendering The Document
+            /// <summary>
+            /// Removes the page from the document http://aspnettutorialonline.blogspot.com/
+            /// </summary>
+            public void RemovePage(HtmlPdfPage page)
+            {
+                this.pages.Remove(page);
+            }
 
             /// <summary>
             /// Renders the PDF to an array of bytes
             /// </summary>
             public byte[] RenderPdf()
             {
-
                 //Document is inbuilt class, available in iTextSharp
                 MemoryStream file = new MemoryStream();
                 Document document = new Document(this.PageSize);
@@ -200,7 +197,7 @@ namespace FurnitureSystem.Pdf
                 document.Open();
 
                 //render each page that has been added
-                foreach (HtmlPdfPage page in this._Pages)
+                foreach (HtmlPdfPage page in this.pages)
                 {
                     document.NewPage();
 
@@ -209,14 +206,14 @@ namespace FurnitureSystem.Pdf
                     StreamWriter html = new StreamWriter(output, Encoding.UTF8);
 
                     //get the page output
-                    html.Write(string.Concat(HtmlToPdfBuilder.DOCUMENT_HTML_START, page._Html.ToString(), HtmlToPdfBuilder.DOCUMENT_HTML_END));
+                    html.Write(string.Concat(HtmlToPdfBuilder.DocumentHtmlStart, page.Html.ToString(), HtmlToPdfBuilder.DocumentHtmlEnd));
                     html.Close();
                     html.Dispose();
 
                     //read the created stream
                     MemoryStream generate = new MemoryStream(output.ToArray());
                     StreamReader reader = new StreamReader(generate);
-                    foreach (object item in HTMLWorker.ParseToList(reader, this._Styles))
+                    foreach (object item in HTMLWorker.ParseToList(reader, this.styles))
                     {
                         document.Add((IElement)item);
                     }
@@ -226,7 +223,6 @@ namespace FurnitureSystem.Pdf
                     reader.Dispose();
                     output.Dispose();
                     generate.Dispose();
-
                 }
 
                 //after rendering
@@ -238,65 +234,7 @@ namespace FurnitureSystem.Pdf
                 //return the rendered PDF
                 document.Close();
                 return file.ToArray();
-
             }
-
-            #endregion
-
         }
-
-        #endregion
-
-        #region HtmlPdfPage Class
-
-        /// <summary>
-        /// A page to insert into a HtmlToPdfBuilder Class
-        /// </summary>
-        public class HtmlPdfPage
-        {
-
-            #region Constructors
-
-            /// <summary>
-            /// The default information for this page
-            /// </summary>
-            public HtmlPdfPage()
-            {
-                this._Html = new StringBuilder();
-            }
-
-            #endregion
-
-            #region Fields
-
-            //parts for generating the page
-            internal StringBuilder _Html;
-
-            #endregion
-
-            #region Working With The Html
-
-            /// <summary>
-            /// Appends the formatted HTML onto a page
-            /// </summary>
-            public virtual void AppendHtml(string content, params object[] values)
-            {
-                this._Html.AppendFormat(content, values);
-            }
-
-            #endregion
-
-        }
-
-        #endregion
-
-        #region Rendering Delegate
-
-        /// <summary>
-        /// Delegate for rendering events
-        /// </summary>
-        public delegate void RenderEvent(PdfWriter writer, Document document);
-
-        #endregion
     }
 }
