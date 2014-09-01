@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Pdf", "Furn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Excel", "FurnitureSystem.Excel\FurnitureSystem.Excel.csproj", "{A36342FF-4A2F-4654-8589-8C9B9EB208CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Zip", "FurnitureSystem.Zip\FurnitureSystem.Zip.csproj", "{8C6699E7-7C13-4102-9D57-AD3D7AF3EBA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A36342FF-4A2F-4654-8589-8C9B9EB208CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A36342FF-4A2F-4654-8589-8C9B9EB208CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A36342FF-4A2F-4654-8589-8C9B9EB208CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C6699E7-7C13-4102-9D57-AD3D7AF3EBA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C6699E7-7C13-4102-9D57-AD3D7AF3EBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C6699E7-7C13-4102-9D57-AD3D7AF3EBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C6699E7-7C13-4102-9D57-AD3D7AF3EBA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

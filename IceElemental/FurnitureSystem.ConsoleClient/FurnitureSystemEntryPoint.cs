@@ -8,11 +8,17 @@
     using FurnitureSystem.Pdf;
     using FurnitureSystem.Xml;
     using FurnitureSystem.Excel;
+    using FurnitureSystem.Zip;
 
     public class FurnitureSystemEntryPoint
     {
         public static void Main()
         {
+
+            string zipPath = @"../../../ExcelReports.zip";
+            string extractPath = @"../../../";
+            ZipExtractor.Extract(zipPath, extractPath);
+
             var excel = new ExcelReader();
             excel.GetExtractedFilesInfo("../../../ExcelReports/");
 

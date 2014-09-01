@@ -73,6 +73,10 @@
       <Project>{542710a4-8e58-4d32-b9e8-109d1290ebeb}</Project>
       <Name>FurnitureSystem.Xml</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FurnitureSystem.Zip\FurnitureSystem.Zip.csproj">
+      <Project>{8c6699e7-7c13-4102-9d57-ad3d7af3eba2}</Project>
+      <Name>FurnitureSystem.Zip</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FurnitureSystem\FurnitureSystem.Models.csproj">
       <Project>{c8a225e8-e96e-4fd4-b8dd-729f36959856}</Project>
       <Name>FurnitureSystem.Models</Name>
