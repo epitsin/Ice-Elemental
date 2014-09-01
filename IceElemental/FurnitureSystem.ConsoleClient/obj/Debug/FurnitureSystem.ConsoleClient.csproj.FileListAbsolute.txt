@@ -20,3 +20,5 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Conso
 E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.ConsoleClient.exe.config
 E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\obj\Debug\FurnitureSystem.ConsoleClient.exe
 E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\obj\Debug\FurnitureSystem.ConsoleClient.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Excel.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Excel.pdb

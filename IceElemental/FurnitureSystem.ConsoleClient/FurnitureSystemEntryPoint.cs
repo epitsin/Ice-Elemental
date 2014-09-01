@@ -7,93 +7,96 @@
     using FurnitureSystem.Models.Enums;
     using FurnitureSystem.Pdf;
     using FurnitureSystem.Xml;
+    using FurnitureSystem.Excel;
 
     public class FurnitureSystemEntryPoint
     {
         public static void Main()
         {
-            var database = new FurnitureSystemDbContext();
-            using (database)
-            {
-                var ikea = new Manufacturer
-                {
-                    Name = "IKEA"
-                };
+            var excel = new ExcelReader();
+            excel.GetData();
+            //var database = new FurnitureSystemDbContext();
+            //using (database)
+            //{
+            //    var ikea = new Manufacturer
+            //    {
+            //        Name = "IKEA"
+            //    };
 
-                var kitchen = new Section
-                {
-                    Name = "Kitchen"
-                };
+            //    var kitchen = new Section
+            //    {
+            //        Name = "Kitchen"
+            //    };
 
-                var alfredoLocation = new Location
-                {
-                    Country = "BG",
-                    City = "Sofia",
-                    Street = "Malinov",
-                    Number = 50
-                };
+            //    var alfredoLocation = new Location
+            //    {
+            //        Country = "BG",
+            //        City = "Sofia",
+            //        Street = "Malinov",
+            //        Number = 50
+            //    };
 
-                var alfredo = new Shop
-                {
-                    Name = "Alfredo",
-                    Location = alfredoLocation
-                };
+            //    var alfredo = new Shop
+            //    {
+            //        Name = "Alfredo",
+            //        Location = alfredoLocation
+            //    };
 
-                database.Shops.Add(alfredo);
-                database.SaveChanges();
+            //    database.Shops.Add(alfredo);
+            //    database.SaveChanges();
 
-                var chair = new FurniturePiece
-                {
-                    Name = "Pesho",
-                    Type = FurnitureType.Chair,
-                    Material = Material.Wooden,
-                    Price = new Price
-                    {
-                        Money = 15.50m
-                    }
-                };
+            //    var chair = new FurniturePiece
+            //    {
+            //        Name = "Pesho",
+            //        Type = FurnitureType.Chair,
+            //        Material = Material.Wooden,
+            //        Price = new Price
+            //        {
+            //            Money = 15.50m
+            //        }
+            //    };
 
-                chair.Shops.Add(alfredo);
+            //    chair.Shops.Add(alfredo);
 
-                kitchen.FurniturePieces.Add(chair);
+            //    kitchen.FurniturePieces.Add(chair);
 
-                ikea.Sections.Add(kitchen);
+            //    ikea.Sections.Add(kitchen);
 
-                database.Manufacturers.Add(ikea);
+            //    database.Manufacturers.Add(ikea);
 
-                database.SaveChanges();
+            //    database.SaveChanges();
 
-                var f = database.FurniturePieces.ToList();
+            //    var f = database.FurniturePieces.ToList();
 
-                foreach (var furn in f)
-                {
-                    Console.WriteLine(furn.Name);
-                }
+            //    foreach (var furn in f)
+            //    {
+            //        Console.WriteLine(furn.Name);
+            //    }
 
-                var list = from p in database.Shops
-                           from t in database.FurniturePieces
-                           select new
-                           {
-                               Shop = p.Name,
-                               Furniture = t.Name
-                           };
+            //    var list = from p in database.Shops
+            //               from t in database.FurniturePieces
+            //               select new
+            //               {
+            //                   Shop = p.Name,
+            //                   Furniture = t.Name
+            //               };
 
-                foreach (var l in list)
-                {
-                    Console.WriteLine(string.Format("{0} {1}", l.Shop, l.Furniture));
-                }
+            //    foreach (var l in list)
+            //    {
+            //        Console.WriteLine(string.Format("{0} {1}", l.Shop, l.Furniture));
+            //    }
 
-                XmlWriter.GenerateReports();
+            //    XmlWriter.GenerateReports();
 
-                var shopsWithFurniture = XmlReader.GetObjects("../../../XMLReports/ShopReport.xml");
+            //    var shopsWithFurniture = XmlReader.GetObjects("../../../XMLReports/ShopReport.xml");
 
-                foreach (var shop in shopsWithFurniture)
-                {
-                    Console.WriteLine(string.Format("{0} -> {1} -> {2} -> {3}", shop.Item1, shop.Item2, shop.Item3, shop.Item4));
-                }
+            //    foreach (var shop in shopsWithFurniture)
+            //    {
+            //        Console.WriteLine(string.Format("{0} -> {1} -> {2} -> {3}", shop.Item1, shop.Item2, shop.Item3, shop.Item4));
+            //    }
 
-                PdfExporter.Export();
-            }
+            //    PdfExporter.Export();
+            //}
         }
     }
 }
