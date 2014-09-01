@@ -14,7 +14,7 @@
                 {
                     if (entry.FullName.EndsWith(".xls", StringComparison.OrdinalIgnoreCase))
                     {
-                        entry.ExtractToFile(Path.Combine(extractPath, entry.FullName));
+                        entry.ExtractToFile(Path.Combine(extractPath, entry.FullName), true);
                     }
                 }
             } 
