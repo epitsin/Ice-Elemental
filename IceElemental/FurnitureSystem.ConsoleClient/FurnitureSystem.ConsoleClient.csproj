@@ -65,6 +65,10 @@
       <Project>{a36342ff-4a2f-4654-8589-8c9b9eb208cc}</Project>
       <Name>FurnitureSystem.Excel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FurnitureSystem.JsonReporter\FurnitureSystem.JsonReporter.csproj">
+      <Project>{84c5b5e3-ac68-4d48-89f0-1ecf8a9c0d88}</Project>
+      <Name>FurnitureSystem.JsonReporter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FurnitureSystem.Pdf\FurnitureSystem.Pdf.csproj">
       <Project>{1e9c81a7-3bca-4590-856a-0db295ed2cd6}</Project>
       <Name>FurnitureSystem.Pdf</Name>

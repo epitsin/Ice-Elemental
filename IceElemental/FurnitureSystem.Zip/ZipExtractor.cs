@@ -8,9 +8,9 @@
     {
         public static void Extract(string zipPath, string extractPath)
         {
-            using (ZipArchive archive = ZipFile.OpenRead(zipPath))
+            using (var archive = ZipFile.OpenRead(zipPath))
             {
-                foreach (ZipArchiveEntry entry in archive.Entries)
+                foreach (var entry in archive.Entries)
                 {
                     if (entry.FullName.EndsWith(".xls", StringComparison.OrdinalIgnoreCase))
                     {

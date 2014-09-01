@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Excel", "Fu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Zip", "FurnitureSystem.Zip\FurnitureSystem.Zip.csproj", "{8C6699E7-7C13-4102-9D57-AD3D7AF3EBA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.JsonReporter", "FurnitureSystem.JsonReporter\FurnitureSystem.JsonReporter.csproj", "{84C5B5E3-AC68-4D48-89F0-1ECF8A9C0D88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.MySqlDbContext", "FurnitureSystem.MySqlDbContext\FurnitureSystem.MySqlDbContext.csproj", "{6F9C2621-695C-4BDE-881B-157DCAA75C07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{8C6699E7-7C13-4102-9D57-AD3D7AF3EBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C6699E7-7C13-4102-9D57-AD3D7AF3EBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C6699E7-7C13-4102-9D57-AD3D7AF3EBA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C5B5E3-AC68-4D48-89F0-1ECF8A9C0D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C5B5E3-AC68-4D48-89F0-1ECF8A9C0D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C5B5E3-AC68-4D48-89F0-1ECF8A9C0D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C5B5E3-AC68-4D48-89F0-1ECF8A9C0D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9C2621-695C-4BDE-881B-157DCAA75C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9C2621-695C-4BDE-881B-157DCAA75C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9C2621-695C-4BDE-881B-157DCAA75C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9C2621-695C-4BDE-881B-157DCAA75C07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

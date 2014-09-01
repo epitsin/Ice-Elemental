@@ -9,24 +9,29 @@
     using FurnitureSystem.Xml;
     using FurnitureSystem.Excel;
     using FurnitureSystem.Zip;
+    using FurnitureSystem.JsonReporter;
 
     public class FurnitureSystemEntryPoint
     {
         public static void Main()
         {
 
-            string zipPath = @"../../../ExcelReports.zip";
-            string extractPath = @"../../../";
-            ZipExtractor.Extract(zipPath, extractPath);
+            //string zipPath = @"../../../ExcelReports.zip";
+            //string extractPath = @"../../../";
+            //ZipExtractor.Extract(zipPath, extractPath);
 
-            var excel = new ExcelReader();
-            var items = excel.GetExtractedFilesInfo("../../../ExcelReports/");
-            foreach (var item in items)
-            {
-                Console.WriteLine(item.Item1 + " -> " + item.Item2);
-            }
+            //var excel = new ExcelReader();
+            //var items = excel.GetExtractedFilesInfo("../../../ExcelReports/");
+            //foreach (var item in items)
+            //{
+            //    Console.WriteLine(item.Item1 + " -> " + item.Item2);
+            //}
 
-            ExcelWriter.GenerateReports();
+            //ExcelWriter.GenerateReports();
+
+            var json = new JsonReporter();
+            json.GetJsonObjects();
+
             //var database = new FurnitureSystemDbContext();
             //using (database)
             //{
@@ -110,23 +115,23 @@
             //    PdfExporter.Export();
             //}
 
-            var database = new FurnitureSystemDbContext();
-            using (database)
-            {
-                var furnitureWithDelivery = XmlReader.GetObjects("../../../XMLReports/Delivery.xml");
+            //var database = new FurnitureSystemDbContext();
+            //using (database)
+            //{
+            //    var furnitureWithDelivery = XmlReader.GetObjects("../../../XMLReports/Delivery.xml");
 
-                foreach (var shop in furnitureWithDelivery)
-                {
-                    var prices = database.FurniturePieces.Where(x => x.Name == shop.Item1).Select(x => x.Price);
-                    foreach (var price in prices)
-                    {
-                        Console.WriteLine(price.Money);
-                        price.Money -= shop.Item2;
-                    }
-                }
+            //    foreach (var shop in furnitureWithDelivery)
+            //    {
+            //        var prices = database.FurniturePieces.Where(x => x.Name == shop.Item1).Select(x => x.Price);
+            //        foreach (var price in prices)
+            //        {
+            //            Console.WriteLine(price.Money);
+            //            price.Money -= shop.Item2;
+            //        }
+            //    }
 
-                database.SaveChanges();
-            }
+            //    database.SaveChanges();
+            //}
         }
     }
 }

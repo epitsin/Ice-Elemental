@@ -2,7 +2,9 @@
 {
     using System.Collections.Generic;
     using FurnitureSystem.Models.Enums;
+    using System.Runtime.Serialization;
 
+    [DataContract]
     public class FurniturePiece
     {
         public FurniturePiece()
@@ -13,12 +15,12 @@
 
         public virtual ICollection<Colour> Colours { get; set; }
 
+        [DataMember]
         public int Id { get; set; }
 
         public Material Material { get; set; }
 
-        public int MaterialId { get; set; }
-
+        [DataMember]
         public string Name { get; set; }
 
         public virtual Price Price { get; set; }
@@ -30,6 +32,7 @@
         public int SectionId { get; set; }
 
         public virtual ICollection<Shop> Shops { get; set; }
+
 
         public FurnitureType Type { get; set; }
     }

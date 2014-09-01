@@ -1,6 +1,7 @@
 ﻿namespace FurnitureSystem.Models
 {
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
 
     public class Section
     {
@@ -17,6 +18,7 @@
 
         public int ManufacturerId { get; set; }
 
+        [DataMember]
         public string Name { get; set; }
     }
 }
