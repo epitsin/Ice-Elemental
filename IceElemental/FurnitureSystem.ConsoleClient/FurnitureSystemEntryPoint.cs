@@ -14,7 +14,7 @@
         public static void Main()
         {
             var excel = new ExcelReader();
-            excel.GetData();
+            excel.GetExtractedFilesInfo("../../../ExcelReports/");
             //var database = new FurnitureSystemDbContext();
             //using (database)
             //{
