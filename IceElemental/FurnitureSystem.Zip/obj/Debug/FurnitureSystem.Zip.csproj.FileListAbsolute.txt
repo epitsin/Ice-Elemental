@@ -1,6 +1,5 @@
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\bin\Debug\FurnitureSystem.Zip.dll.config
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\bin\Debug\FurnitureSystem.Zip.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\bin\Debug\FurnitureSystem.Zip.pdb
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\obj\Debug\FurnitureSystem.Zip.csprojResolveAssemblyReference.cache
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\obj\Debug\FurnitureSystem.Zip.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\obj\Debug\FurnitureSystem.Zip.pdb

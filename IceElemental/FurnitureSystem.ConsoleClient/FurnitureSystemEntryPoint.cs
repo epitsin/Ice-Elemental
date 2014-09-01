@@ -10,11 +10,48 @@
     using FurnitureSystem.Excel;
     using FurnitureSystem.Zip;
     using FurnitureSystem.JsonReporter;
+    using FurnitureSystem.MySqlDbContext;
+    using Telerik.OpenAccess;
+    using DbContext;
 
     public class FurnitureSystemEntryPoint
     {
+        private static void UpdateDatabase()
+        {
+            using (var context = new FluentModel1())
+            {
+                var schemaHandler = context.GetSchemaHandler();
+                EnsureDB(schemaHandler);
+            }
+        }
+        private static void EnsureDB(ISchemaHandler schemaHandler)
+        {
+            string script = null;
+            if (schemaHandler.DatabaseExists())
+            {
+                script = schemaHandler.CreateUpdateDDLScript(null);
+            }
+            else
+            {
+                schemaHandler.CreateDatabase();
+                script = schemaHandler.CreateDDLScript();
+            }
+
+            if (!string.IsNullOrEmpty(script))
+            {
+                schemaHandler.ExecuteDDLScript(script);
+            }
+        }
         public static void Main()
         {
+            UpdateDatabase();
+            //var json = new JsonReporter();
+            //json.GetJsonObjects();
+
+            //var mysql = new FurnitureSystemEntities();
+            //mysql.FurniturePieces.Select(x => x).FirstOrDefault().Price.Money = 5m;
+            
+
 
             //string zipPath = @"../../../ExcelReports.zip";
             //string extractPath = @"../../../";
@@ -29,8 +66,6 @@
 
             //ExcelWriter.GenerateReports();
 
-            var json = new JsonReporter();
-            json.GetJsonObjects();
 
             //var database = new FurnitureSystemDbContext();
             //using (database)
