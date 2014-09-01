@@ -10,10 +10,10 @@
     {
         // private const string Provider = "Provider=Microsoft.ACE.OLEDB.12.0;";
         // private const string ExtendedProperties = @";Extended Properties='Excel 12.0 xml;HDR=Yes';";
-        // TODO: Extract data as List<Tuple<type, type,...>>
-        public void GetExtractedFilesInfo(string extractionPath)
+        public IList<Tuple<string, string>> GetExtractedFilesInfo(string extractionPath)
         {
             var connectionStrings = this.CreateConnectionStrings(extractionPath);
+            var listOfItems = new List<Tuple<string, string>>();
 
             foreach (var connString in connectionStrings)
             {
@@ -26,6 +26,7 @@
 
                 var excelCommand = new OleDbCommand(@"SELECT * FROM [" + sheetName + "]", excelConnection);
 
+
                 using (excelConnection)
                 {
                     using (var oleDbDataAdapter = new OleDbDataAdapter(excelCommand))
@@ -37,16 +38,17 @@
                         {
                             while (reader.Read())
                             {
-                                var firstName = reader["Name"];
-                                var lastName = reader["Location"];
-                                
-                                Console.WriteLine(firstName);
-                                Console.WriteLine(lastName);
+                                var name = reader["Name"].ToString();
+                                var location = reader["Location"].ToString();
+
+                                listOfItems.Add(new Tuple<string, string>(name, location));
                             }
                         }
                     }
                 }
             }
+
+            return listOfItems;
         }
 
         private IList<string> CreateConnectionStrings(string directoryPath)
