@@ -15,6 +15,8 @@
         {
             var excel = new ExcelReader();
             excel.GetExtractedFilesInfo("../../../ExcelReports/");
+
+            ExcelWriter.GenerateReports();
             //var database = new FurnitureSystemDbContext();
             //using (database)
             //{

@@ -21,14 +21,14 @@
                 var excelConnection = new OleDbConnection(connString);
                 excelConnection.Open();
 
-                DataTable excelSchema = excelConnection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                var excelSchema = excelConnection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
                 string sheetName = excelSchema.Rows[0]["TABLE_NAME"].ToString();
 
                 var excelCommand = new OleDbCommand(@"SELECT * FROM [" + sheetName + "]", excelConnection);
 
                 using (excelConnection)
                 {
-                    using (OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter(excelCommand))
+                    using (var oleDbDataAdapter = new OleDbDataAdapter(excelCommand))
                     {
                         var dataSet = new DataSet();
                         oleDbDataAdapter.Fill(dataSet);
@@ -71,7 +71,7 @@
         {
             var filePaths = new List<string>();
 
-            Stack<string> stack = new Stack<string>();
+            var stack = new Stack<string>();
             stack.Push(sourceDirectory);
 
             while (stack.Count > 0)
@@ -85,7 +85,7 @@
                     filePaths.Add(filePath);
                 }
 
-                string[] subDirectories = Directory.GetDirectories(currentDirectory);
+                var subDirectories = Directory.GetDirectories(currentDirectory);
 
                 for (int i = 0; i < subDirectories.Length; i++)
                 {

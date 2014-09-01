@@ -8,29 +8,29 @@
     {
         public static void GenerateReports()
         {
-            //var excelConnection = new OleDbConnection(Settings.Default.excelConnection);
-            //excelConnection.Open();
+            var excelConnection = new OleDbConnection(Settings.Default.writerConnection);
+            excelConnection.Open();
 
-            //DataTable excelSchema = excelConnection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
-            //string sheetName = excelSchema.Rows[0]["TABLE_NAME"].ToString();
+            DataTable excelSchema = excelConnection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+            string sheetName = excelSchema.Rows[0]["TABLE_NAME"].ToString();
 
-            //string name = "Lesho";
-            //int age = 19;
+            string name = "Videnov";
+            string location = "Sofia, Tsarigradsko, 15";
 
-            //var excelCommand = new OleDbCommand(@"INSERT INTO [" + sheetName + @"] VALUES (@name, @age)", excelConnection);
+            var excelCommand = new OleDbCommand(@"INSERT INTO [" + sheetName + @"] VALUES (@name, @location)", excelConnection);
 
-            //excelCommand.Parameters.AddWithValue("@name", name);
-            //excelCommand.Parameters.AddWithValue("@age", age);
+            excelCommand.Parameters.AddWithValue("@name", name);
+            excelCommand.Parameters.AddWithValue("@location", location);
 
-            //using (excelConnection)
-            //{
-            //    for (int i = 0; i < 5; i++)
-            //    {
-            //        var queryResult = excelCommand.ExecuteNonQuery();
+            using (excelConnection)
+            {
+                for (int i = 0; i < 1; i++)
+                {
+                    var queryResult = excelCommand.ExecuteNonQuery();
 
-            //        Console.WriteLine("({0} row(s) affected)", queryResult);
-            //    }
-            //}
+                    Console.WriteLine("({0} row(s) affected)", queryResult);
+                }
+            }
         }
     }
 }
