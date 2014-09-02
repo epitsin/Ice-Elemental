@@ -14,12 +14,12 @@ namespace FurnitureSystem.MongoDb.Data
             var connectionStr = "mongodb://localhost/";
             var mongoClient = new MongoClient(connectionStr);
             var mongoServer = mongoClient.GetServer();
-            var furnitureSystemDb = mongoServer.GetDatabase("FurnitureSystem");
-            var seeder = new Seeder(furnitureSystemDb);
-            seeder.SeedFurniture();
-            var retriever = new DataRetriever(furnitureSystemDb);
-            var furn = retriever.GetFurnitureLocal();
-            foreach (var item in furn)
+            var shopSystemDb = mongoServer.GetDatabase("ShopSystem");
+            var seeder = new Seeder(shopSystemDb);
+            seeder.SeedShops();
+            var retriever = new DataRetriever(shopSystemDb);
+            var shops = retriever.GetShopsLocal();
+            foreach (var item in shops)
             {
                 Console.WriteLine(item.Name);
             }
