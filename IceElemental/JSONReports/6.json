@@ -1,1 +1,5 @@
-{"Id":6,"Name":"Pesho","Price":5.50}
+{
+  "FurnitureId": 6,
+  "FurnitureName": "Pesho",
+  "Price": 5.50
+}

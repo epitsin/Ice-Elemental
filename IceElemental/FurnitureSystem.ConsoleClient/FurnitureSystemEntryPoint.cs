@@ -19,6 +19,9 @@
         public static void Main()
         {
             var mysql = new FurnitureSystemEntities();
+
+            var json = new JsonReporter();
+            json.Report();
             //var json = new JsonReporter();
             //json.GetJsonObjects();
 

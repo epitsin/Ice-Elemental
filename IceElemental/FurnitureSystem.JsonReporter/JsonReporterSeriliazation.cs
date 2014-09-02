@@ -8,7 +8,7 @@
     using FurnitureSystem.Models;
     using System;
 
-    public class JsonReporter
+    public class JsonReporterSeriliazation
     {
         public void GetJsonObjects()
         {
