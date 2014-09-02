@@ -26,9 +26,7 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Conso
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Zip.pdb
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.JsonReporter.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.JsonReporter.pdb
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.MySqlDbContext.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\Telerik.OpenAccess.35.Extensions.dll
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.MySqlDbContext.pdb
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\Telerik.OpenAccess.35.Extensions.xml
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\DbContext.dll
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\DbContext.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.MySql.Data.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.MySql.Data.pdb

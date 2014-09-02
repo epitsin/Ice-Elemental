@@ -59,10 +59,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DbContext\DbContext.csproj">
-      <Project>{e3aee23c-df47-4af5-92ee-22d25894d3a5}</Project>
-      <Name>DbContext</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FurnitureSystem.Data\FurnitureSystem.Data.csproj">
       <Project>{928dc2fa-787f-4df1-b592-7392adcdabee}</Project>
       <Name>FurnitureSystem.Data</Name>
@@ -75,9 +71,9 @@
       <Project>{84c5b5e3-ac68-4d48-89f0-1ecf8a9c0d88}</Project>
       <Name>FurnitureSystem.JsonReporter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FurnitureSystem.MySqlDbContext\FurnitureSystem.MySqlDbContext.csproj">
+    <ProjectReference Include="..\FurnitureSystem.MySql.Data\FurnitureSystem.MySql.Data.csproj">
       <Project>{6f9c2621-695c-4bde-881b-157dcaa75c07}</Project>
-      <Name>FurnitureSystem.MySqlDbContext</Name>
+      <Name>FurnitureSystem.MySql.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\FurnitureSystem.Pdf\FurnitureSystem.Pdf.csproj">
       <Project>{1e9c81a7-3bca-4590-856a-0db295ed2cd6}</Project>

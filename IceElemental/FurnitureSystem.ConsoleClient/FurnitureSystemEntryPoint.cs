@@ -10,15 +10,14 @@
     using FurnitureSystem.Excel;
     using FurnitureSystem.Zip;
     using FurnitureSystem.JsonReporter;
-    using FurnitureSystem.MySqlDbContext;
     using Telerik.OpenAccess;
-    using DbContext;
+    using FurnitureSystem.MySql.Data;
 
     public class FurnitureSystemEntryPoint
     {
         private static void UpdateDatabase()
         {
-            using (var context = new FluentModel1())
+            using (var context = new FurnitureSystemMySqlDbContext())
             {
                 var schemaHandler = context.GetSchemaHandler();
                 EnsureDB(schemaHandler);
