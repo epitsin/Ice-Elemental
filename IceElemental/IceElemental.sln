@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.JsonReporte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.MySql", "FurnitureSystem.MySql\FurnitureSystem.MySql.csproj", "{C50145E6-A244-4F1F-B41F-90D1925B4A00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Mongo", "FurnitureSystem.Mongo\FurnitureSystem.Mongo.csproj", "{84D9D031-0612-41F3-B9D8-50C2FE8C30B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D9D031-0612-41F3-B9D8-50C2FE8C30B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D9D031-0612-41F3-B9D8-50C2FE8C30B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D9D031-0612-41F3-B9D8-50C2FE8C30B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D9D031-0612-41F3-B9D8-50C2FE8C30B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

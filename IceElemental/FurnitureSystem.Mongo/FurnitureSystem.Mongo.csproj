@@ -55,8 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MongoDBEstablisher.cs" />
+    <Compile Include="MongoDBReader.cs" />
+    <Compile Include="MongoDBUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="test.cs" />
+    <Compile Include="MongoDBEstablisherEntryPoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

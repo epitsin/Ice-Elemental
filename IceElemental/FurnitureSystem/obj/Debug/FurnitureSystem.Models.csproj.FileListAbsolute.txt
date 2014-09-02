@@ -9,3 +9,13 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\bin\D
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\obj\Debug\FurnitureSystem.Models.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\obj\Debug\FurnitureSystem.Models.pdb
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem\obj\Debug\FurnitureSystem.Models.csprojResolveAssemblyReference.cache
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\bin\Debug\FurnitureSystem.Models.dll.config
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\bin\Debug\FurnitureSystem.Models.dll
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\bin\Debug\FurnitureSystem.Models.pdb
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\bin\Debug\EntityFramework.dll
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\bin\Debug\EntityFramework.xml
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\obj\Debug\FurnitureSystem.Models.csprojResolveAssemblyReference.cache
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\obj\Debug\FurnitureSystem.Models.dll
+C:\Users\Samuil.Petrow\Desktop\Ice-Elemental-master\IceElemental\FurnitureSystem\obj\Debug\FurnitureSystem.Models.pdb
