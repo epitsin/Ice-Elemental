@@ -92,8 +92,7 @@
                 {
                     connection.Open();
 
-                    string commandText = "INSERT INTO jsonreports(Id, Name, Price) " +
-                                  "VALUES (@furnitureId, @furnitureName, @price);";
+                    string commandText = JsonReporter.GetCommandText(connection, report.FurnitureId);
 
                     var command = new MySqlCommand(commandText, connection);
 
@@ -104,6 +103,33 @@
                     command.ExecuteNonQuery();
                 }
             }
+        }
+
+        private static string GetCommandText(MySqlConnection connection, int id)
+        {
+            string returnCommand = "INSERT INTO jsonreports(Id, Name, Price) " +
+                                  "VALUES (@furnitureId, @furnitureName, @price);";
+
+            MySqlCommand reportFileCheckCommand = new MySqlCommand("SELECT Id FROM jsonreports", connection);
+            var reader = reportFileCheckCommand.ExecuteReader();
+
+            using (reader)
+            {
+                while (reader.Read())
+                {
+                    int idValue = (int)reader["Id"];
+
+                    if (idValue == id)
+                    {
+                        returnCommand = "UPDATE jsonreports " +
+                                        "SET Price = @price " +
+                                        "WHERE Id = @furnitureId;";
+                        break;
+                    }
+                }
+            }
+
+            return returnCommand;
         }
     }
 }
