@@ -14,7 +14,15 @@ namespace FurnitureSystem.MongoDb.Data
             var connectionStr = "mongodb://localhost/";
             var mongoClient = new MongoClient(connectionStr);
             var mongoServer = mongoClient.GetServer();
-            var movieSystemDb = mongoServer.GetDatabase("MovieSystem");
+            var furnitureSystemDb = mongoServer.GetDatabase("FurnitureSystem");
+            var seeder = new Seeder(furnitureSystemDb);
+            seeder.SeedFurniture();
+            var retriever = new DataRetriever(furnitureSystemDb);
+            var furn = retriever.GetFurnitureLocal();
+            foreach (var item in furn)
+            {
+                Console.WriteLine(item.Name);
+            }
         }
     }
 }
