@@ -14,7 +14,6 @@ namespace FurnitureSystem.Data
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<FurnitureSystemDbContext, Configuration>());
         }
 
-        public IDbSet<Colour> Colours { get; set; }
 
         public IDbSet<FurniturePiece> FurniturePieces { get; set; }
 

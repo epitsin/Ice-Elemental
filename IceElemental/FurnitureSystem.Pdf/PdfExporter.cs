@@ -26,13 +26,12 @@
             {
                 strBuilder.Append("<table border='1'>");
                 strBuilder.Append("<tr bgcolor='#BBBBBB'>");
-                strBuilder.AppendFormat("<th colspan='4'>Shop: {0}</th>", shops[i]);
+                strBuilder.AppendFormat("<th colspan='3'>Shop: {0}</th>", shops[i]);
                 strBuilder.Append("</tr>");
                 strBuilder.Append("<tr bgcolor='#BBBBBB'>");
                 strBuilder.Append("<th class=\"th\"><b>Furniture</b></th>");
                 strBuilder.Append("<th><b>Section</b></th>");
                 strBuilder.Append("<th><b>Price</b></th>");
-                strBuilder.Append("<th><b>Colour</b></th>");
                 strBuilder.Append("</tr>");
 
                 var shopName = shops[i];
@@ -44,8 +43,7 @@
                                 {
                                     Name = f.Name,
                                     Section = f.Section.Name,
-                                    Price = f.Price,
-                                    Colour = f.Colours.FirstOrDefault().Name
+                                    Price = f.Price
                                 };
 
                 foreach (var furniture in furnitures)
@@ -54,7 +52,6 @@
                     strBuilder.AppendFormat("<td>{0}</td>", furniture.Name);
                     strBuilder.AppendFormat("<td>{0}</td>", furniture.Section);
                     strBuilder.AppendFormat("<td>{0}</td>", furniture.Price.Money);
-                    strBuilder.AppendFormat("<td>{0}</td>", furniture.Colour);
                     strBuilder.Append("</tr>");
                 }
 

@@ -9,11 +9,8 @@
     {
         public FurniturePiece()
         {
-            this.Colours = new HashSet<Colour>();
             this.Shops = new HashSet<Shop>();
         }
-
-        public virtual ICollection<Colour> Colours { get; set; }
 
         [DataMember]
         public int Id { get; set; }
