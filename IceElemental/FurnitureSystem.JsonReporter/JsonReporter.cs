@@ -1,15 +1,14 @@
 ﻿namespace FurnitureSystem.JsonReporter
 {
-
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
 
+    using FurnitureSystem.Data;
+
     using MySql.Data.MySqlClient;
     using Newtonsoft.Json;
-
-    using FurnitureSystem.Data;
 
     public class JsonReporter
     {
@@ -31,9 +30,9 @@
 
             var reports = JsonReporter.GetJsonReports(dbContext);
 
-            var saveFilesPaths = JsonReporter.SaveReportsToFiles(reports);
+            JsonReporter.SaveReportsToFiles(reports);
 
-            JsonReporter.SendReportToDatabase(reports, saveFilesPaths);
+            JsonReporter.SendReportToDatabase(reports);
 
             Console.WriteLine("JSON reports created.");
         }
@@ -54,17 +53,17 @@
             return reports;
         }
 
-        private static List<string> SaveReportsToFiles(IQueryable<JsonReport> reports)
+        private static void SaveReportsToFiles(IQueryable<JsonReport> reports)
         {
             Console.WriteLine("Saving reports to files...");
 
-            List<string> reportsFilePaths = new List<string>();
+            var reportsFilePaths = new List<string>();
 
             foreach (var report in reports)
             {
                 string reportFilePath = string.Format("{0}{1}{2}", ReportsPath, report.FurnitureId, ReportsFileExtension);
 
-                StreamWriter writer = new StreamWriter(reportFilePath);
+                var writer = new StreamWriter(reportFilePath);
 
                 using (writer)
                 {
@@ -75,11 +74,9 @@
                     reportsFilePaths.Add(reportFilePath);
                 }
             }
-
-            return reportsFilePaths;
         }
 
-        private static void SendReportToDatabase(IQueryable<JsonReport> reportsQuery, List<string> saveFilesPaths)
+        private static void SendReportToDatabase(IQueryable<JsonReport> reportsQuery)
         {
             Console.WriteLine("Sending report data to MySQL database...");
 
@@ -87,54 +84,26 @@
 
             for (int i = 0, length = reports.Count; i < length; i++)
             {
-                JsonReport report = reports[i];
-                string reportFilePath = saveFilesPaths[i];
+                var report = reports[i];
 
-                MySqlConnection connection = new MySqlConnection(ConnectionString);
+                var connection = new MySqlConnection(ConnectionString);
 
                 using (connection)
                 {
                     connection.Open();
 
-                    string commandText = JsonReporter.GetCommandText(connection, reportFilePath);
+                    string commandText = "INSERT INTO jsonreports(Id, Name, Price) " +
+                                  "VALUES (@furnitureId, @furnitureName, @price);";
 
-                    MySqlCommand command = new MySqlCommand(commandText, connection);
+                    var command = new MySqlCommand(commandText, connection);
 
                     command.Parameters.AddWithValue("@furnitureId", report.FurnitureId);
-                    command.Parameters.AddWithValue("@filePath", reportFilePath);
                     command.Parameters.AddWithValue("@furnitureName", report.FurnitureName);
                     command.Parameters.AddWithValue("@price", report.Price);
 
                     command.ExecuteNonQuery();
                 }
             }
-        }
-
-        private static string GetCommandText(MySqlConnection connection, string reportFilePath)
-        {
-            string returnCommand = "INSERT INTO furnituresystemreports(FurnitureId, FurnitureReportFilePath, FurnitureName, Price) " +
-                                   "VALUES (@furnitureId, @filePath, @furnitureName, @price);";
-
-            MySqlCommand reportFileCheckCommand = new MySqlCommand("SELECT FurnitureReportFilePath FROM furnituresystemreports", connection);
-            var reader = reportFileCheckCommand.ExecuteReader();
-
-            using (reader)
-            {
-                while (reader.Read())
-                {
-                    string rowValue = (string)reader["FurnitureReportFilePath"];
-
-                    if (rowValue == reportFilePath)
-                    {
-                        returnCommand = "UPDATE furnituresystemreports " +
-                                        "SET Price = @price " +
-                                        "WHERE FurnitureReportFilePath = @filePath;";
-                        break;
-                    }
-                }
-            }
-
-            return returnCommand;
         }
     }
 }

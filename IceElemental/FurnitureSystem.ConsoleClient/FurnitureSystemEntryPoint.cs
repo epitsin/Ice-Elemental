@@ -22,8 +22,7 @@
 
             var json = new JsonReporter();
             json.Report();
-            //var json = new JsonReporter();
-            //json.GetJsonObjects();
+
 
             //var mysql = new FurnitureSystemEntities();
             //mysql.FurniturePieces.Select(x => x).FirstOrDefault().Price.Money = 5m;
