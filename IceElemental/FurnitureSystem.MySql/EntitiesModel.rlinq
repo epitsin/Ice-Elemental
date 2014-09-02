@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="FurnitureSystemEntities" namespace="FurnitureSystem.MySql" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="FurnitureSystemEntities" backend="mysql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="FurnitureSystem.MySql" default="true">
+      <orm:class name="Jsonreport" uniqueId="b1fe506d-898f-4910-8a18-d1c23d8e25f1">
+        <orm:table name="jsonreports" />
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="325bc387-c43f-4f60-bd45-b7313fcb6a10" type="System.Int32">
+          <orm:column name="Id" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="e550a1ea-36a4-41a4-8bd4-57d12e8e1b6d" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar" nullable="true" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_price" property="Price" behavior="readwrite" uniqueId="1e93077b-a817-4e68-8644-41107b2a0b59" type="System.String">
+          <orm:column name="Price" sql-type="nvarchar" nullable="true" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_jsonReportscol" property="JsonReportscol" behavior="readwrite" uniqueId="6281ece1-e845-47d6-a192-95a0b6255f37" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="JsonReportscol" sql-type="decimal" nullable="true" length="10" scale="0" ado-type="Decimal" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="jsonreports">
+        <orm:column name="Id" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar" nullable="true" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Price" sql-type="nvarchar" nullable="true" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="JsonReportscol" sql-type="decimal" nullable="true" length="10" scale="0" ado-type="Decimal" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>Connection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Server=localhost;Database=furnituresystemreports;Uid=root;Pwd=root;</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MySql</Backend>
+        <ProviderName>MySql.Data.MySqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="b1fe506d-898f-4910-8a18-d1c23d8e25f1" name="Jsonreport" namespace="FurnitureSystem.MySql" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="325bc387-c43f-4f60-bd45-b7313fcb6a10" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="6281ece1-e845-47d6-a192-95a0b6255f37" name="JsonReportscol" type="Int64" label="JsonReportscol : Int64" nullable="true" kind="Persistent" fieldName="_jsonReportscol" />
+      <Property Id="e550a1ea-36a4-41a4-8bd4-57d12e8e1b6d" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="1e93077b-a817-4e68-8644-41107b2a0b59" name="Price" label="Price : String" kind="Persistent" fieldName="_price" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="35ae1e03-1eba-42f2-8cf7-e3c57ac050e1">
+      <domainContainer name="FurnitureSystemEntities" namespace="FurnitureSystem.MySql" showPropertiesCompartment="true">
+        <entitySetProperty name="Jsonreports" namespace="FurnitureSystem.MySql" type="Jsonreport" label="Jsonreports : IQueryable&lt;FurnitureSystem.MySql.Jsonreport&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

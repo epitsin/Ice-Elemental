@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="FurnitureSystemEntities" isDefault="true">
+    <DomainModelMoniker name="/FurnitureSystemEntities" />
+    <nestedChildShapes>
+      <classShape Id="53a2c45e-6bbf-4c92-9161-2dd7952b35e4" absoluteBounds="0.75, 0.75, 1.5, 2.1473746744791669">
+        <DomainClassMoniker name="/FurnitureSystemEntities/Jsonreport" />
+        <nestedChildShapes>
+          <elementListCompartment Id="15fd3ab7-9238-4784-810b-ce47e97b91f7" absoluteBounds="0.765, 1.2599999999999998, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d85109de-b7f1-4bb4-a0b7-4f3e666ac884" absoluteBounds="0.765, 2.2885953776041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="8f290a8d-b741-42d0-88dc-3466504fa533" absoluteBounds="0.765, 2.5479850260416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>
