@@ -68,29 +68,17 @@
         {
             var shops = sqlServerDatabase.Shops;
             var furniture = sqlServerDatabase.FurniturePieces;
-            var index = 1;
+            var randomGenerator = new Random();
 
-            int startIndex = 1;
-            int endIndex = 3;
             foreach (var shop in shops)
             {
-                var start = startIndex;
-                foreach (var furniturePiece in furniture)
+                for (int i = 0; i < 3; i++)
                 {
-                    if (start < endIndex)
-                    {
-                        shop.FurniturePieces.Add(furniturePiece);
-                        furniturePiece.Price.Money *= (1 + shop.ProfitPercentage);
-                    }
-
-                    start += 1;
+                    var index = randomGenerator.Next(1, 16);
+                    var furniturePiece = furniture.FirstOrDefault(x => x.Id == index);
+                    shop.FurniturePieces.Add(furniturePiece);
+                    furniturePiece.Price.Money *= (1 + shop.ProfitPercentage);
                 }
-                //var firstFurniture = furniture.FirstOrDefault(x => x.Id == index);
-                //shop.FurniturePieces.Add(firstFurniture);
-                //firstFurniture.Price.Money *= (1 + shop.ProfitPercentage);
-                //index++;
-                startIndex++;
-                endIndex++;
             }
         }
 
