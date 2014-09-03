@@ -40,69 +40,89 @@
             var db = new FurnitureSystemDbContext();
             using (db)
             {
-                foreach (var item in items)
+                //foreach (var item in items)
+                //{
+                //    var manufacturer = new Manufacturer
+                //    {
+                //        Name = item.Item1
+                //    };
+                //    var section = new Section
+                //    {
+                //        Name = item.Item2
+                //    };
+                //    var product = new FurniturePiece
+                //    {
+                //        Name = item.Item3,
+                //        Material = (Material)item.Item4,
+                //        Type = (FurnitureType)item.Item5,
+                //        Price = new Price
+                //        {
+                //            Money = item.Item6
+                //        }
+                //    };
+
+                //    db.Manufacturers.Add(manufacturer);
+                //    db.Sections.Add(section);
+                //    db.FurniturePieces.Add(product);
+                //    db.SaveChanges();
+                //}
+
+                //foreach (var item in db.FurniturePieces)
+                //{
+                //    Console.WriteLine(item.Name + " -> " + item.Section.Name);
+                //}
+
+
+                //var connectionStr = "mongodb://localhost/";
+                //var mongoClient = new MongoClient(connectionStr);
+                //var mongoServer = mongoClient.GetServer();
+                //var shopSystemDb = mongoServer.GetDatabase("ShopSystem");
+                //var seeder = new Seeder(shopSystemDb);
+                //seeder.SeedShops();
+                //var retriever = new DataRetriever(shopSystemDb);
+                //var shops = retriever.GetShopsLocal();
+                //foreach (var item in shops)
+                //{
+                //    var shop = new Shop
+                //    {
+                //        Name = item.Name
+                //    };
+                //    var location = new Location
+                //    {
+                //        Shop = shop,
+                //        Country = item.Country,
+                //        City = item.City,
+                //        Street = item.Street,
+                //        Number = item.StreetNumber
+                //    };
+                //    db.Shops.Add(shop);
+                //    db.Locations.Add(location);
+                //    db.SaveChanges();
+                //}
+
+                //foreach (var item in db.Shops)
+                //{
+                //    Console.WriteLine(item.Name + " -> " + item.Location.Street);
+                //}
+
+                //int start = 1;
+                //foreach (var item in db.Shops)
+                //{
+                //    for (int i = 0; i < 5; i++)
+                //    {
+                //        var furniturePiece = db.FurniturePieces.FirstOrDefault(x => x.Id == i);
+                //        item.FurniturePieces.Add(furniturePiece);
+                //    }
+                //}
+
+                //db.SaveChanges();
+                foreach (var shop in db.FurniturePieces)
                 {
-                    var manufacturer = new Manufacturer
+                    Console.WriteLine(shop.Name);
+                    foreach (var furn in shop.Shops)
                     {
-                        Name = item.Item1
-                    };
-                    var section = new Section
-                    {
-                        Name = item.Item2
-                    };
-                    var product = new FurniturePiece
-                    {
-                        Name = item.Item3,
-                        Material = (Material)item.Item4,
-                        Type = (FurnitureType)item.Item5,
-                        Price = new Price
-                        {
-                            Money = item.Item6
-                        }
-                    };
-
-                    db.Manufacturers.Add(manufacturer);
-                    db.Sections.Add(section);
-                    db.FurniturePieces.Add(product);
-                    db.SaveChanges();
-                }
-
-                foreach (var item in db.FurniturePieces)
-                {
-                    Console.WriteLine(item.Name + " -> " + item.Section.Name);
-                }
-
-
-                var connectionStr = "mongodb://localhost/";
-                var mongoClient = new MongoClient(connectionStr);
-                var mongoServer = mongoClient.GetServer();
-                var shopSystemDb = mongoServer.GetDatabase("ShopSystem");
-                var seeder = new Seeder(shopSystemDb);
-                seeder.SeedShops();
-                var retriever = new DataRetriever(shopSystemDb);
-                var shops = retriever.GetShopsLocal();
-                foreach (var item in shops)
-                {
-                    var shop = new Shop
-                    {
-                        Name = item.Name
-                    };
-                    var location = new Location
-                    {
-                        Shop = shop,
-                        Country = item.Country,
-                        City = item.City,
-                        Street = item.Street,
-                        Number = item.StreetNumber
-                    };
-                    db.Shops.Add(shop);
-                    db.Locations.Add(location);
-                    db.SaveChanges();
-                }
-
-                foreach (var item in db.Shops)
-                {
-                    Console.WriteLine(item.Name + " -> " + item.Location.Street);
+                        Console.WriteLine("    " + furn.Name);
+                    }
                 }
             }
 
