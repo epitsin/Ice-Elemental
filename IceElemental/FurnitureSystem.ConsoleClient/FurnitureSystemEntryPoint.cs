@@ -19,6 +19,7 @@
     using FurnitureSystem.SQLite.Model;
     using FurnitureSystem.SQLite.Data;
     using MongoDB.Driver.Builders;
+    using System.Collections.Generic;
 
     public class FurnitureSystemEntryPoint
     {
@@ -58,26 +59,36 @@
         }
         public static void Main()
         {
-            var db = new FurnitureSystemDbContext();
+            ////SQL SERVER DATABASE
+            //var sqlServerDatabase = new FurnitureSystemDbContext();
+
+            ////MONGODB DATABASE
+            //var connectionStr = "mongodb://localhost/";
+            //var mongoClient = new MongoClient(connectionStr);
+            //var mongoServer = mongoClient.GetServer();
+            //var mongoDatabase = mongoServer.GetDatabase("ShopSystem");
+            
+
+            //ReadXmlUpdateSqlAndMongoBases(sqlServerDatabase, mongoDatabase);
 
 
-            var connectionStr = "mongodb://localhost/";
-            var mongoClient = new MongoClient(connectionStr);
-            var mongoServer = mongoClient.GetServer();
-            var shopSystemDb = mongoServer.GetDatabase("ShopSystem");
+            var mySqlDatabase = new FurnitureSystemEntities();
 
-            ReadXmlUpdateSqlAndMongoBases(db, shopSystemDb);
 
-            var retriever = new DataRetriever(shopSystemDb);
-            var shops = retriever.GetShopsLocal();
+            var dataFromMySql = mySqlDatabase.Jsonreports;
 
-            foreach (var item in shops)
+            var customerData = new CustomerContext();
+            var dataFromSqLite = customerData.Customers.ToList();
+            var customers = new List<Tuple<string, string, int, decimal>>();
+            foreach (var customer in dataFromSqLite)
             {
-                Console.WriteLine(item.Name + " -> " + item.Street);
+                var product = dataFromMySql.FirstOrDefault(x=>x.Id == customer.ProductId);
+                var newCustomer = new Tuple<string, string, int, decimal>(customer.Name, product.Name, customer.ProductQuantity, decimal.Parse(product.Price));
+
+                customers.Add(newCustomer);
             }
 
-
-            //var customerData = new CustomerContext();
+            ExcelWriter.GenerateReports(customers);
 
             //var customer = new Customer
             //{

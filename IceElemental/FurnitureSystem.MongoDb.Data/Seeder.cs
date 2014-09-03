@@ -1,17 +1,17 @@
 ﻿namespace FurnitureSystem.MongoDb.Data
 {
-    using FurnitureSystem.Models.Enums;
-    using MongoDB.Driver;
     using System;
     using System.Collections.Generic;
 
+    using MongoDB.Driver;
+
     public class Seeder
     {
-        private MongoDatabase dbContext;
+        private readonly MongoDatabase mongoDatabase;
 
-        public Seeder(MongoDatabase dbContext)
+        public Seeder(MongoDatabase mongoDatabase)
         {
-            this.dbContext = dbContext;
+            this.mongoDatabase = mongoDatabase;
         }
 
         public void SeedShops()
@@ -28,12 +28,12 @@
                 new ShopLocation("Fortress Shop", "Erathia", "Mosswood", "Hermit Cove", 47, 0.23m)
             };
 
-            if (this.dbContext.GetCollection("ShopSystem") == null)
+            if (this.mongoDatabase.GetCollection("ShopSystem") == null)
             {
-                this.dbContext.CreateCollection("ShopSystem");
+                this.mongoDatabase.CreateCollection("ShopSystem");
             }
 
-            var shopsCollection = this.dbContext.GetCollection("ShopSystem");
+            var shopsCollection = this.mongoDatabase.GetCollection("ShopSystem");
 
             foreach (var shop in innitialShops)
             {
