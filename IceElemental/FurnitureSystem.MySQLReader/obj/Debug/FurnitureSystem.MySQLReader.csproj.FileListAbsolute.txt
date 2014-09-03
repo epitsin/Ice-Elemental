@@ -1,0 +1,17 @@
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\FurnitureSystem.MySQLReader.dll.config
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\FurnitureSystem.MySQLReader.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\FurnitureSystem.MySQLReader.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\FurnitureSystem.JsonReporter.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\MySql.Data.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\FurnitureSystem.Data.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\EntityFramework.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\FurnitureSystem.Models.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\FurnitureSystem.JsonReporter.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\FurnitureSystem.Data.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\EntityFramework.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\FurnitureSystem.Models.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\obj\Debug\FurnitureSystem.MySQLReader.csprojResolveAssemblyReference.cache
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\obj\Debug\FurnitureSystem.MySQLReader.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MySQLReader\obj\Debug\FurnitureSystem.MySQLReader.pdb
