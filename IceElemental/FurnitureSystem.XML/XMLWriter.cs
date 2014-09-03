@@ -6,37 +6,41 @@
 
     public class XmlWriter
     {
-        public static void GenerateReports()
+        public static void GenerateReports(FurnitureSystemDbContext database)
         {
-            var path = "../../../XMLReports/ShopReport.xml";
-            var database = new FurnitureSystemDbContext();
-            using (database)
+            var path = "../../../XMLReports/ManufacturersReport.xml";
+            var root = new XElement("manufacturers-and-their-products");
+
+            var manufacturers = database.Manufacturers;
+
+            foreach (var manufacturer in manufacturers)
             {
-                var root = new XElement("shops-with-furniture");
+                var currentManufacturer = new XElement("manufacturer");
+                currentManufacturer.SetAttributeValue("name", manufacturer.Name);
 
-                var shops = database.Shops;
-
-                foreach (var shop in shops)
+                var sections = manufacturer.Sections;
+                foreach (var section in sections)
                 {
-                    var furnitures = shop.FurniturePieces;
-                    var currentShop = new XElement("shop");
-                    currentShop.SetAttributeValue("name", shop.Name);
-                    currentShop.SetAttributeValue("location", string.Format("{0}{1}{2}", shop.Location.City, shop.Location.Street, shop.Location.Number));
+                    var currentSection = new XElement("section");
+                    currentSection.SetAttributeValue("name", section.Name);
 
-                    foreach (var furniture in furnitures)
+                    var products = section.FurniturePieces;
+                    foreach (var product in products)
                     {
-                        var shopInfo = new XElement("furnitures");
-                        shopInfo.Add(new XElement("name", furniture.Name));
-                        shopInfo.Add(new XElement("price", furniture.Price.Money));
+                        var currentProduct = new XElement("product");
+                        currentProduct.Add(new XElement("name", product.Name));
+                        currentProduct.Add(new XElement("price", product.Price.Money));
 
-                        currentShop.Add(shopInfo);
+                        currentSection.Add(currentProduct);
                     }
 
-                    root.Add(currentShop);
+                    currentManufacturer.Add(currentSection);
                 }
 
-                root.Save(path);
+                root.Add(currentManufacturer);
             }
+
+            root.Save(path);
         }
     }
 }

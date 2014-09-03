@@ -12,7 +12,6 @@
 
             var xmlDoc = XDocument.Load(fileName);
 
-
             foreach (var furniture in xmlDoc.Descendants("shop"))
             {
                 var shopName = furniture.Attribute("name").Value;

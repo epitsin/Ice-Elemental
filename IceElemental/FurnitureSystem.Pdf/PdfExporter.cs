@@ -9,9 +9,8 @@
 
     public static class PdfExporter
     {
-        public static void Export()
+        public static void Export(FurnitureSystemDbContext database)
         {
-            var database = new FurnitureSystemDbContext();
             var strBuilder = new StringBuilder();
 
             var shops = database.Shops.Select(x => x.Name).ToArray();
@@ -57,10 +56,10 @@
 
                 strBuilder.Append("</table>");
 
-                if (i != 2)
-                {
-                    strBuilder.Append("<br />");
-                }
+                //if (i != 2)
+                //{
+                //    strBuilder.Append("<br />");
+                //}
             }
 
             var builder = new PdfBuilder.HtmlToPdfBuilder(PageSize.LETTER);
@@ -69,7 +68,7 @@
 
             var file = builder.RenderPdf();
             var tempFolder = "../../../PDFReports/";
-            var tempFileName = string.Format("{0}-{1}.pdf", DateTime.Now.ToString("yyyy-MM-dd"), Guid.NewGuid());
+            var tempFileName = string.Format("{0}.pdf", DateTime.Now.ToString("yyyy-MM-dd"));
             if (Helpers.DirectoryExist(tempFolder))
             {
                 if (!File.Exists(string.Format("{0}{1}", tempFolder, tempFileName)))
