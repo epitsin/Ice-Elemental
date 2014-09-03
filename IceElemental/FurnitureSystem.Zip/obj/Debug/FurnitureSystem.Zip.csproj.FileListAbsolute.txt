@@ -4,3 +4,9 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\b
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\obj\Debug\FurnitureSystem.Zip.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\obj\Debug\FurnitureSystem.Zip.pdb
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Zip\obj\Debug\FurnitureSystem.Zip.csprojResolveAssemblyReference.cache
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Zip\bin\Debug\FurnitureSystem.Zip.dll.config
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Zip\bin\Debug\FurnitureSystem.Zip.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Zip\bin\Debug\FurnitureSystem.Zip.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Zip\obj\Debug\FurnitureSystem.Zip.csprojResolveAssemblyReference.cache
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Zip\obj\Debug\FurnitureSystem.Zip.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Zip\obj\Debug\FurnitureSystem.Zip.pdb

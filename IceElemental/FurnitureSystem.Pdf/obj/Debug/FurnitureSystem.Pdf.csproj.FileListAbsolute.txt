@@ -13,3 +13,18 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\b
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\obj\Debug\FurnitureSystem.Pdf.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\obj\Debug\FurnitureSystem.Pdf.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Pdf.dll.config
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Pdf.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Pdf.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\EntityFramework.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\EntityFramework.SqlServer.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Data.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Models.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\itextsharp.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Data.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\FurnitureSystem.Models.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\EntityFramework.xml
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\bin\Debug\EntityFramework.SqlServer.xml
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\obj\Debug\FurnitureSystem.Pdf.csprojResolveAssemblyReference.cache
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\obj\Debug\FurnitureSystem.Pdf.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Pdf\obj\Debug\FurnitureSystem.Pdf.pdb

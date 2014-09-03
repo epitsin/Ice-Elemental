@@ -14,6 +14,9 @@
     using FurnitureSystem.MySql;
     using FurnitureSystem.MongoDb.Data;
     using MongoDB.Driver;
+    using FurnitureSystem.MySQLReader;
+    using FurnitureSystem.SQLite.Model;
+    using FurnitureSystem.SQLite.Data;
 
     public class FurnitureSystemEntryPoint
     {

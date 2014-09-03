@@ -12,3 +12,17 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.XML\b
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.XML\obj\Debug\FurnitureSystem.Xml.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.XML\obj\Debug\FurnitureSystem.Xml.pdb
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.XML\obj\Debug\FurnitureSystem.XML.csprojResolveAssemblyReference.cache
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\FurnitureSystem.Xml.dll.config
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\FurnitureSystem.Xml.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\FurnitureSystem.Xml.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\EntityFramework.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\EntityFramework.SqlServer.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\FurnitureSystem.Data.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\FurnitureSystem.Models.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\FurnitureSystem.Data.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\FurnitureSystem.Models.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\EntityFramework.xml
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\bin\Debug\EntityFramework.SqlServer.xml
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\obj\Debug\FurnitureSystem.Xml.csprojResolveAssemblyReference.cache
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\obj\Debug\FurnitureSystem.Xml.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.XML\obj\Debug\FurnitureSystem.Xml.pdb

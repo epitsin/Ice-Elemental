@@ -1,0 +1,2 @@
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\obj\Debug\FurnitureSystem.ConsoleClient.exe
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\obj\Debug\FurnitureSystem.ConsoleClient.pdb

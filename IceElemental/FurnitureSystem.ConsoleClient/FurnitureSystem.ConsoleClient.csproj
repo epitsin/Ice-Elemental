@@ -81,6 +81,10 @@
       <Project>{805fbad0-9d3a-4730-a25e-4518d38818cd}</Project>
       <Name>FurnitureSystem.MongoDb.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FurnitureSystem.MySQLReader\FurnitureSystem.MySQLReader.csproj">
+      <Project>{b540db9c-300b-41f6-98a6-ac37599356f6}</Project>
+      <Name>FurnitureSystem.MySQLReader</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FurnitureSystem.MySql\FurnitureSystem.MySql.csproj">
       <Project>{c50145e6-a244-4f1f-b41f-90d1925b4a00}</Project>
       <Name>FurnitureSystem.MySql</Name>
@@ -88,6 +92,14 @@
     <ProjectReference Include="..\FurnitureSystem.Pdf\FurnitureSystem.Pdf.csproj">
       <Project>{1e9c81a7-3bca-4590-856a-0db295ed2cd6}</Project>
       <Name>FurnitureSystem.Pdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FurnitureSystem.SQLite.Data\FurnitureSystem.SQLite.Data.csproj">
+      <Project>{14813a1f-730c-4386-a980-c28d7d04f9ef}</Project>
+      <Name>FurnitureSystem.SQLite.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FurnitureSystem.SQLite.Model\FurnitureSystem.SQLite.Model.csproj">
+      <Project>{96cb8161-9621-4431-9d63-f7eb16d213a6}</Project>
+      <Name>FurnitureSystem.SQLite.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\FurnitureSystem.XML\FurnitureSystem.Xml.csproj">
       <Project>{542710a4-8e58-4d32-b9e8-109d1290ebeb}</Project>

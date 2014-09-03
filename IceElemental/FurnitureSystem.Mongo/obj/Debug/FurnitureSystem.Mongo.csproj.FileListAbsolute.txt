@@ -56,3 +56,21 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Mongo
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\MongoDB.Bson.xml
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\MongoDB.Driver.xml
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\obj\Debug\FurnitureSystem.Mongo.csprojResolveAssemblyReference.cache
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\FurnitureSystem.Mongo.exe.config
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\FurnitureSystem.Mongo.exe
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\FurnitureSystem.Mongo.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\EntityFramework.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\EntityFramework.SqlServer.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\FurnitureSystem.Data.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\FurnitureSystem.Models.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\MongoDB.Bson.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\MongoDB.Driver.dll
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\FurnitureSystem.Data.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\FurnitureSystem.Models.pdb
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\EntityFramework.xml
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\EntityFramework.SqlServer.xml
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\MongoDB.Bson.xml
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\bin\Debug\MongoDB.Driver.xml
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\obj\Debug\FurnitureSystem.Mongo.csprojResolveAssemblyReference.cache
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\obj\Debug\FurnitureSystem.Mongo.exe
+E:\Telerik Academy\Бази данни\Teamwork\Ice-Elemental\IceElemental\FurnitureSystem.Mongo\obj\Debug\FurnitureSystem.Mongo.pdb

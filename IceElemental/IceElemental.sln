@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Models", "FurnitureSystem\FurnitureSystem.Models.csproj", "{C8A225E8-E96E-4FD4-B8DD-729F36959856}"
 EndProject
@@ -24,6 +24,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.Mongo", "FurnitureSystem.Mongo\FurnitureSystem.Mongo.csproj", "{84D9D031-0612-41F3-B9D8-50C2FE8C30B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.MongoDb.Data", "FurnitureSystem.MongoDb.Data\FurnitureSystem.MongoDb.Data.csproj", "{805FBAD0-9D3A-4730-A25E-4518D38818CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.MySQLReader", "FurnitureSystem.MySQLReader\FurnitureSystem.MySQLReader.csproj", "{B540DB9C-300B-41F6-98A6-AC37599356F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.SQLite.Data", "FurnitureSystem.SQLite.Data\FurnitureSystem.SQLite.Data.csproj", "{14813A1F-730C-4386-A980-C28D7D04F9EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.SQLite.Model", "FurnitureSystem.SQLite.Model\FurnitureSystem.SQLite.Model.csproj", "{96CB8161-9621-4431-9D63-F7EB16D213A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureSystem.SQLiteReader", "FurnitureSystem.SQLiteReader\FurnitureSystem.SQLiteReader.csproj", "{6E24A65A-C98F-450A-94F8-BB01B7C3BE56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +83,22 @@ Global
 		{805FBAD0-9D3A-4730-A25E-4518D38818CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{805FBAD0-9D3A-4730-A25E-4518D38818CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{805FBAD0-9D3A-4730-A25E-4518D38818CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B540DB9C-300B-41F6-98A6-AC37599356F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B540DB9C-300B-41F6-98A6-AC37599356F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B540DB9C-300B-41F6-98A6-AC37599356F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B540DB9C-300B-41F6-98A6-AC37599356F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14813A1F-730C-4386-A980-C28D7D04F9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14813A1F-730C-4386-A980-C28D7D04F9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14813A1F-730C-4386-A980-C28D7D04F9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14813A1F-730C-4386-A980-C28D7D04F9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96CB8161-9621-4431-9D63-F7EB16D213A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96CB8161-9621-4431-9D63-F7EB16D213A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96CB8161-9621-4431-9D63-F7EB16D213A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96CB8161-9621-4431-9D63-F7EB16D213A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E24A65A-C98F-450A-94F8-BB01B7C3BE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E24A65A-C98F-450A-94F8-BB01B7C3BE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E24A65A-C98F-450A-94F8-BB01B7C3BE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E24A65A-C98F-450A-94F8-BB01B7C3BE56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
