@@ -3,79 +3,51 @@
     using System;
     using System.IO;
     using System.Linq;
-    using System.Text;
     using FurnitureSystem.Data;
     using iTextSharp.text;
+    using iTextSharp.text.pdf;
 
     public static class PdfExporter
     {
-        public static void Export(FurnitureSystemDbContext database)
+        public static void Write(FurnitureSystemDbContext database)
         {
-            var strBuilder = new StringBuilder();
 
-            var shops = database.Shops.Select(x => x.Name).ToArray();
+            Document pdfReport = new Document(PageSize.A4, 10, 10, 10, 10);
 
-            strBuilder.Append("<table border='1'>");
-            strBuilder.Append("<tr>");
-            strBuilder.Append("<th style=\"font-size:16px; text-align:center;\" colspan='4'>Shops Report</th>");
-            strBuilder.Append("</tr>");
-            strBuilder.Append("</table>");
+            PdfWriter pdfWriter = PdfWriter.GetInstance(pdfReport,new FileStream(@"../../../PDFReports/ShopPdfReport.pdf", FileMode.Create, FileAccess.Write));
 
-            for (int i = 0; i < shops.Count(); i++)
+            var shops = database.Shops;
+
+            pdfReport.Open();
+
+            PdfPTable header = new PdfPTable(1);
+            header.AddCell("Shops");
+            pdfReport.Add(header);
+
+            float[] widths = new float[] { 45f, 50f, 55f };
+
+            foreach (var shop in shops)
             {
-                strBuilder.Append("<table border='1'>");
-                strBuilder.Append("<tr bgcolor='#BBBBBB'>");
-                strBuilder.AppendFormat("<th colspan='3'>Shop: {0}</th>", shops[i]);
-                strBuilder.Append("</tr>");
-                strBuilder.Append("<tr bgcolor='#BBBBBB'>");
-                strBuilder.Append("<th class=\"th\"><b>Furniture</b></th>");
-                strBuilder.Append("<th><b>Section</b></th>");
-                strBuilder.Append("<th><b>Price</b></th>");
-                strBuilder.Append("</tr>");
+                PdfPTable shopName = new PdfPTable(1);
+                shopName.AddCell(shop.Name);
+                pdfReport.Add(shopName);
 
-                var shopName = shops[i];
-                var furnitures =
-                                from s in database.Shops
-                                from f in database.FurniturePieces
-                                where s.Name == shopName
-                                select new
-                                {
-                                    Name = f.Name,
-                                    Section = f.Section.Name,
-                                    Price = f.Price
-                                };
+                PdfPTable body = new PdfPTable(3);
+                body.SetWidths(widths);
 
-                foreach (var furniture in furnitures)
+                var furniturePieces = shop.FurniturePieces;
+
+                foreach (var furniture in furniturePieces)
                 {
-                    strBuilder.Append("<tr>");
-                    strBuilder.AppendFormat("<td>{0}</td>", furniture.Name);
-                    strBuilder.AppendFormat("<td>{0}</td>", furniture.Section);
-                    strBuilder.AppendFormat("<td>{0}</td>", furniture.Price.Money);
-                    strBuilder.Append("</tr>");
+                    body.AddCell(string.Format("{0}", furniture.Name));
+                    body.AddCell(string.Format("{0}", furniture.Section.Name));
+                    body.AddCell(string.Format("{0:F2}", furniture.Price.Money));
                 }
 
-                strBuilder.Append("</table>");
-
-                //if (i != 2)
-                //{
-                //    strBuilder.Append("<br />");
-                //}
+                pdfReport.Add(body);
             }
 
-            var builder = new PdfBuilder.HtmlToPdfBuilder(PageSize.LETTER);
-            var page = builder.AddPage();
-            page.AppendHtml(strBuilder.ToString());
-
-            var file = builder.RenderPdf();
-            var tempFolder = "../../../PDFReports/";
-            var tempFileName = string.Format("{0}.pdf", DateTime.Now.ToString("yyyy-MM-dd"));
-            if (Helpers.DirectoryExist(tempFolder))
-            {
-                if (!File.Exists(string.Format("{0}{1}", tempFolder, tempFileName)))
-                {
-                    File.WriteAllBytes(string.Format("{0}{1}", tempFolder, tempFileName), file);
-                }
-            }
+            pdfReport.Close();
         }
     }
 }

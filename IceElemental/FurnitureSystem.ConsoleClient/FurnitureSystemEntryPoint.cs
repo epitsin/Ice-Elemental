@@ -25,71 +25,107 @@
     {
         public static void Main()
         {
-            //string zipPath = @"../../../ExcelReports.zip";
-            //string extractPath = @"../../../ExcelReports/";
-            //ZipExtractor.Extract(zipPath, extractPath);
+            string zipPath = @"../../../ExcelReports.zip";
+            string extractPath = @"../../../ExcelReports/";
+            ZipExtractor.Extract(zipPath, extractPath);
 
             //SQL SERVER DATABASE
             var sqlServerDatabase = new FurnitureSystemDbContext();
 
-            ////MONGODB DATABASE
-            //var connectionStr = "mongodb://localhost/";
-            //var mongoClient = new MongoClient(connectionStr);
-            //var mongoServer = mongoClient.GetServer();
-            //var mongoDatabase = mongoServer.GetDatabase("ShopSystem");
+            //MONGODB DATABASE
+            var connectionStr = "mongodb://localhost/";
+            var mongoClient = new MongoClient(connectionStr);
+            var mongoServer = mongoClient.GetServer();
+            var mongoDatabase = mongoServer.GetDatabase("ShopSystem");
 
-            //var seeder = new Seeder(mongoDatabase);
-            //seeder.SeedShops();
+            ReadAndSaveDataFromMongoToSqlServer(sqlServerDatabase, mongoDatabase);
 
-            //ReadAndSaveDataFromMongoToSqlServer(sqlServerDatabase, mongoDatabase);
+            ReadAndSaveDataFromExcelToSqlServer(sqlServerDatabase);
 
-            //ReadAndSaveDataFromExcelToSqlServer(sqlServerDatabase);
+            MakeConnectionsBetweenShopsAndFurniture(sqlServerDatabase);
 
-            PdfExporter.Export(sqlServerDatabase);
+            PdfExporter.Write(sqlServerDatabase);
 
-            //XmlWriter.GenerateReports(sqlServerDatabase);
+            XmlWriter.GenerateReports(sqlServerDatabase);
 
-            ////MYSQL DATABASE
-            //var mySqlDatabase = new FurnitureSystemEntities();
+            //MYSQL DATABASE
+            var mySqlDatabase = new FurnitureSystemEntities();
 
-            //var json = new JsonReporter();
-            //json.Report();
+            var json = new JsonReporter();
+            json.Report();
 
-            //ReadXmlUpdateSqlAndMongoBases(sqlServerDatabase, mongoDatabase);
+            ReadXmlUpdateSqlAndMongoBases(sqlServerDatabase, mongoDatabase);
 
-            //var dataFromMySql = mySqlDatabase.Jsonreports;
+            var dataFromMySql = mySqlDatabase.Jsonreports;
 
-            ////SQLITE DATABASE
-            //var customerData = new CustomerContext();
+            //SQLITE DATABASE
+            var customerData = new CustomerContext();
 
-            //ReadFromMySqlAndSqLiteAndWriteInExcel(dataFromMySql, customerData);
+            ReadFromMySqlAndSqLiteAndWriteInExcel(dataFromMySql, customerData);
+        }
+
+        private static void MakeConnectionsBetweenShopsAndFurniture(FurnitureSystemDbContext sqlServerDatabase)
+        {
+            var shops = sqlServerDatabase.Shops;
+            var furniture = sqlServerDatabase.FurniturePieces;
+            var index = 1;
+
+            int startIndex = 1;
+            int endIndex = 3;
+            foreach (var shop in shops)
+            {
+                var start = startIndex;
+                foreach (var furniturePiece in furniture)
+                {
+                    if (start < endIndex)
+                    {
+                        shop.FurniturePieces.Add(furniturePiece);
+                        furniturePiece.Price.Money *= (1 + shop.ProfitPercentage);
+                    }
+
+                    start += 1;
+                }
+                //var firstFurniture = furniture.FirstOrDefault(x => x.Id == index);
+                //shop.FurniturePieces.Add(firstFurniture);
+                //firstFurniture.Price.Money *= (1 + shop.ProfitPercentage);
+                //index++;
+                startIndex++;
+                endIndex++;
+            }
         }
 
         private static void ReadAndSaveDataFromMongoToSqlServer(FurnitureSystemDbContext sqlServerDatabase, MongoDatabase shopSystemDb)
         {
-            var seeder = new Seeder(shopSystemDb);
-            seeder.SeedShops();
-            var retriever = new DataRetriever(shopSystemDb);
-            var shops = retriever.GetShopsLocal();
-            foreach (var item in shops)
+            if (!shopSystemDb.CollectionExists("ShopSystem"))
             {
-                var shop = new Shop
+                var seeder = new Seeder(shopSystemDb);
+                seeder.SeedShops();
+            }
+            if (sqlServerDatabase.Shops.Count() == 0)
+            {
+                var retriever = new DataRetriever(shopSystemDb);
+                var shops = retriever.GetShopsLocal();
+                foreach (var item in shops)
                 {
-                    Name = item.Name
-                };
+                    var shop = new Shop
+                    {
+                        Name = item.Name,
+                        ProfitPercentage = item.ProfitPercentage
+                    };
 
-                var location = new Location
-                {
-                    Shop = shop,
-                    Country = item.Country,
-                    City = item.City,
-                    Street = item.Street,
-                    Number = item.StreetNumber
-                };
+                    var location = new Location
+                    {
+                        Shop = shop,
+                        Country = item.Country,
+                        City = item.City,
+                        Street = item.Street,
+                        Number = item.StreetNumber
+                    };
 
-                sqlServerDatabase.Shops.Add(shop);
-                sqlServerDatabase.Locations.Add(location);
-                sqlServerDatabase.SaveChanges();
+                    sqlServerDatabase.Shops.Add(shop);
+                    sqlServerDatabase.Locations.Add(location);
+                    sqlServerDatabase.SaveChanges();
+                }
             }
         }
 
@@ -97,58 +133,60 @@
         {
             var excel = new ExcelReader();
             var items = excel.GetExtractedFilesInfo("../../../ExcelReports/Read/");
-
-            foreach (var item in items)
+            if (sqlServerDatabase.Manufacturers.Count() == 0)
             {
-                var product = new FurniturePiece
+                foreach (var item in items)
                 {
-                    Name = item.Item3,
-                    Material = (Material)item.Item4,
-                    Type = (FurnitureType)item.Item5,
-                    Price = new Price
+                    var product = new FurniturePiece
                     {
-                        Money = item.Item6
-                    }
-                };
+                        Name = item.Item3,
+                        Material = (Material)item.Item4,
+                        Type = (FurnitureType)item.Item5,
+                        Price = new Price
+                        {
+                            Money = item.Item6
+                        }
+                    };
 
-                var section = new Section
-                {
-                    Name = item.Item2
-                };
+                    var section = new Section
+                    {
+                        Name = item.Item2
+                    };
 
-                var manufacturer = new Manufacturer
-                {
-                    Name = item.Item1
-                };
+                    var manufacturer = new Manufacturer
+                    {
+                        Name = item.Item1
+                    };
 
 
-                var existingManufacturer = sqlServerDatabase.Manufacturers.FirstOrDefault(x => x.Name == item.Item1);
+                    var existingManufacturer = sqlServerDatabase.Manufacturers.FirstOrDefault(x => x.Name == item.Item1);
 
-                if (existingManufacturer == null)
-                {
-                    section.FurniturePieces.Add(product);
-                    manufacturer.Sections.Add(section);
-                    sqlServerDatabase.Manufacturers.Add(manufacturer);
-                }
-                else
-                {
-                    var existingSection = existingManufacturer.Sections.FirstOrDefault(x => x.Name == item.Item2);
-                    if(existingSection == null)
+                    if (existingManufacturer == null)
                     {
                         section.FurniturePieces.Add(product);
-                        existingManufacturer.Sections.Add(section);
+                        manufacturer.Sections.Add(section);
+                        sqlServerDatabase.Manufacturers.Add(manufacturer);
                     }
                     else
                     {
-                        var existingProduct = existingSection.FurniturePieces.FirstOrDefault(x => x.Name == item.Item3);
-                        if (existingProduct == null)
+                        var existingSection = existingManufacturer.Sections.FirstOrDefault(x => x.Name == item.Item2);
+                        if (existingSection == null)
                         {
-                            existingSection.FurniturePieces.Add(product);
+                            section.FurniturePieces.Add(product);
+                            existingManufacturer.Sections.Add(section);
+                        }
+                        else
+                        {
+                            var existingProduct = existingSection.FurniturePieces.FirstOrDefault(x => x.Name == item.Item3);
+                            if (existingProduct == null)
+                            {
+                                existingSection.FurniturePieces.Add(product);
+                            }
                         }
                     }
-                }
 
-                sqlServerDatabase.SaveChanges();
+                    sqlServerDatabase.SaveChanges();
+                }
             }
         }
         private static void ReadXmlUpdateSqlAndMongoBases(FurnitureSystemDbContext sqlServerDatabase, MongoDatabase mongoDatabase)
