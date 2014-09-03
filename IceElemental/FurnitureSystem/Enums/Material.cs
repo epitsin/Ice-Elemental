@@ -2,12 +2,12 @@
 {
     public enum Material
     {
-        Wooden,
+        Wooden = 1,
 
-        Plastic,
+        Plastic = 2,
 
-        Steel,
+        Steel = 3,
 
-        Glass
+        Glass = 4
     }
 }

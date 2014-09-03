@@ -33,12 +33,12 @@
             //string extractPath = @"../../../";
             //ZipExtractor.Extract(zipPath, extractPath);
 
-            //var excel = new ExcelReader();
-            //var items = excel.GetExtractedFilesInfo("../../../ExcelReports/");
-            //foreach (var item in items)
-            //{
-            //    Console.WriteLine(item.Item1 + " -> " + item.Item2);
-            //}
+            var excel = new ExcelReader();
+            var items = excel.GetExtractedFilesInfo("../../../ExcelReports/");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item.Item1 + " -> " + item.Item2);
+            }
 
             //ExcelWriter.GenerateReports();
 

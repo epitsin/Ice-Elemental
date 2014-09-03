@@ -2,26 +2,26 @@
 {
     public enum FurnitureType
     {
-        Chair,
+        Chair = 1,
 
-        Table,
+        Table = 2,
 
-        Bed,
+        Bed = 3,
 
-        Desk,
+        Desk = 4,
 
-        Cupboard,
+        Cupboard = 5,
 
-        Sofa,
+        Sofa = 6,
 
-        ArmChair,
+        ArmChair = 7,
 
-        Lamp,
+        Lamp = 8,
 
-        Mirror,
+        Mirror = 9,
 
-        Painting,
+        Painting = 10,
 
-        BookShelf
+        BookShelf = 11
     }
 }
