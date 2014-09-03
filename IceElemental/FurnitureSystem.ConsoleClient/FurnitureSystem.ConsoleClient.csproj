@@ -39,6 +39,12 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -70,6 +76,10 @@
     <ProjectReference Include="..\FurnitureSystem.JsonReporter\FurnitureSystem.JsonReporter.csproj">
       <Project>{84c5b5e3-ac68-4d48-89f0-1ecf8a9c0d88}</Project>
       <Name>FurnitureSystem.JsonReporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FurnitureSystem.MongoDb.Data\FurnitureSystem.MongoDb.Data.csproj">
+      <Project>{805fbad0-9d3a-4730-a25e-4518d38818cd}</Project>
+      <Name>FurnitureSystem.MongoDb.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\FurnitureSystem.MySql\FurnitureSystem.MySql.csproj">
       <Project>{c50145e6-a244-4f1f-b41f-90d1925b4a00}</Project>

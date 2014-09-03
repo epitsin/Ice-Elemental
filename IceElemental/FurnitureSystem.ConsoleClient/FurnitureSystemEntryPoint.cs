@@ -12,10 +12,12 @@
     using FurnitureSystem.JsonReporter;
     using Telerik.OpenAccess;
     using FurnitureSystem.MySql;
+    using FurnitureSystem.MongoDb.Data;
+    using MongoDB.Driver;
 
     public class FurnitureSystemEntryPoint
     {
-        
+
         public static void Main()
         {
             //var mysql = new FurnitureSystemEntities();
@@ -26,7 +28,7 @@
 
             //var mysql = new FurnitureSystemEntities();
             //mysql.FurniturePieces.Select(x => x).FirstOrDefault().Price.Money = 5m;
-            
+
 
 
             //string zipPath = @"../../../ExcelReports.zip";
@@ -69,7 +71,41 @@
                 {
                     Console.WriteLine(item.Name + " -> " + item.Section.Name);
                 }
+
+
+                var connectionStr = "mongodb://localhost/";
+                var mongoClient = new MongoClient(connectionStr);
+                var mongoServer = mongoClient.GetServer();
+                var shopSystemDb = mongoServer.GetDatabase("ShopSystem");
+                var seeder = new Seeder(shopSystemDb);
+                seeder.SeedShops();
+                var retriever = new DataRetriever(shopSystemDb);
+                var shops = retriever.GetShopsLocal();
+                foreach (var item in shops)
+                {
+                    var shop = new Shop
+                    {
+                        Name = item.Name
+                    };
+                    var location = new Location
+                    {
+                        Shop = shop,
+                        Country = item.Country,
+                        City = item.City,
+                        Street = item.Street,
+                        Number = item.StreetNumber
+                    };
+                    db.Shops.Add(shop);
+                    db.Locations.Add(location);
+                    db.SaveChanges();
+                }
+
+                foreach (var item in db.Shops)
+                {
+                    Console.WriteLine(item.Name + " -> " + item.Location.Street);
+                }
             }
+
             //ExcelWriter.GenerateReports();
 
             //WORKS FROM HERE
