@@ -1,0 +1,12 @@
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Data.dll.config
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Data.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Data.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\EntityFramework.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Model.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Model.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\EntityFramework.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\obj\Debug\FurnitureSystem.SQLite.Data.csprojResolveAssemblyReference.cache
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\obj\Debug\FurnitureSystem.SQLite.Data.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\obj\Debug\FurnitureSystem.SQLite.Data.pdb

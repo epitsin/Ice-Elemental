@@ -1,0 +1,6 @@
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Model\bin\Debug\FurnitureSystem.SQLite.Model.dll.config
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Model\bin\Debug\FurnitureSystem.SQLite.Model.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Model\bin\Debug\FurnitureSystem.SQLite.Model.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Model\obj\Debug\FurnitureSystem.SQLite.Model.csprojResolveAssemblyReference.cache
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Model\obj\Debug\FurnitureSystem.SQLite.Model.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Model\obj\Debug\FurnitureSystem.SQLite.Model.pdb
