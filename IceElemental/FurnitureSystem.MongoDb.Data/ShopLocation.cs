@@ -6,7 +6,7 @@
     public class ShopLocation
     {
         [BsonConstructor]
-        public ShopLocation(string name, string country, string city, string street, int streetNumber, int profitPercentage)
+        public ShopLocation(string name, string country, string city, string street, int streetNumber, decimal profitPercentage)
         {
             this.Name = name;
             this.Country = country;
@@ -29,6 +29,6 @@
 
         public int StreetNumber { get; set; }
 
-        public int ProfitPercentage { get; set; }
+        public decimal ProfitPercentage { get; set; }
     }
 }
