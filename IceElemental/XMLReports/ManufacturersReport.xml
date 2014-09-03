@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manufacturers-and-their-products>
+  <manufacturer name="ARON">
+    <section name="Kitchen">
+      <product>
+        <name>ARONChair</name>
+        <price>371.582406795600</price>
+      </product>
+    </section>
+    <section name="Bathroom">
+      <product>
+        <name>ARONMirror</name>
+        <price>95.549761747440</price>
+      </product>
+      <product>
+        <name>ARONSink</name>
+        <price>70</price>
+      </product>
+    </section>
+    <section name="Bedroom">
+      <product>
+        <name>ARONBed</name>
+        <price>150</price>
+      </product>
+      <product>
+        <name>ARONLamp</name>
+        <price>30</price>
+      </product>
+    </section>
+  </manufacturer>
+  <manufacturer name="IKEA">
+    <section name="Kitchen">
+      <product>
+        <name>IKEAChair</name>
+        <price>60</price>
+      </product>
+    </section>
+    <section name="Bathroom">
+      <product>
+        <name>IKEAMirror</name>
+        <price>20</price>
+      </product>
+      <product>
+        <name>IKEASink</name>
+        <price>90</price>
+      </product>
+    </section>
+    <section name="Bedroom">
+      <product>
+        <name>IKEABed</name>
+        <price>120</price>
+      </product>
+      <product>
+        <name>IKEALamp</name>
+        <price>40</price>
+      </product>
+    </section>
+  </manufacturer>
+  <manufacturer name="Videnov">
+    <section name="Kitchen">
+      <product>
+        <name>VidenovChair</name>
+        <price>55</price>
+      </product>
+      <product>
+        <name>VidenovTable</name>
+        <price>70</price>
+      </product>
+    </section>
+    <section name="Bathroom">
+      <product>
+        <name>VidenovMirror</name>
+        <price>25</price>
+      </product>
+      <product>
+        <name>VidenovSink</name>
+        <price>40</price>
+      </product>
+    </section>
+    <section name="Bedroom">
+      <product>
+        <name>VidenovBed</name>
+        <price>110</price>
+      </product>
+    </section>
+  </manufacturer>
+</manufacturers-and-their-products>

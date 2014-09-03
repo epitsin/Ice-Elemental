@@ -1,0 +1,16 @@
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\x64\SQLite.Interop.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\x86\SQLite.Interop.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\FurnitureSystem.SQLiteReader.dll.config
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\FurnitureSystem.SQLiteReader.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\FurnitureSystem.SQLiteReader.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\EntityFramework.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\System.Data.SQLite.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\EntityFramework.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\bin\Debug\System.Data.SQLite.xml
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\obj\Debug\FurnitureSystem.SQLiteReader.csprojResolveAssemblyReference.cache
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\obj\Debug\FurnitureSystem.SQLiteReader.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLiteReader\obj\Debug\FurnitureSystem.SQLiteReader.pdb
