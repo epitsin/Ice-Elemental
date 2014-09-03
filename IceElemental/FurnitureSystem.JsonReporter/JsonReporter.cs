@@ -6,7 +6,6 @@
     using System.Linq;
 
     using FurnitureSystem.Data;
-
     using MySql.Data.MySqlClient;
     using Newtonsoft.Json;
 
@@ -110,7 +109,7 @@
             string returnCommand = "INSERT INTO jsonreports(Id, Name, Price) " +
                                   "VALUES (@furnitureId, @furnitureName, @price);";
 
-            MySqlCommand reportFileCheckCommand = new MySqlCommand("SELECT Id FROM jsonreports", connection);
+            var reportFileCheckCommand = new MySqlCommand("SELECT Id FROM jsonreports", connection);
             var reader = reportFileCheckCommand.ExecuteReader();
 
             using (reader)

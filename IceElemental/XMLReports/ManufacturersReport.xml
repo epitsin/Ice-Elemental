@@ -1,86 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manufacturers-and-their-products>
   <manufacturer name="ARON">
+    <section name="Bathroom">
+      <product>
+        <name>ARONSink</name>
+        <price>341.48637600</price>
+      </product>
+      <product>
+        <name>ARONMirror</name>
+        <price>41.4960</price>
+      </product>
+    </section>
     <section name="Kitchen">
       <product>
         <name>ARONChair</name>
-        <price>427.3170</price>
-      </product>
-    </section>
-    <section name="Bathroom">
-      <product>
-        <name>ARONMirror</name>
-        <price>466.351376400000</price>
-      </product>
-      <product>
-        <name>ARONSink</name>
-        <price>211.6389315600</price>
+        <price>138.62100000</price>
       </product>
     </section>
     <section name="Bedroom">
       <product>
         <name>ARONLamp</name>
-        <price>108.84945500</price>
+        <price>47.970000</price>
       </product>
       <product>
         <name>ARONBed</name>
-        <price>165.00</price>
+        <price>150.00</price>
       </product>
     </section>
   </manufacturer>
   <manufacturer name="IKEA">
+    <section name="Kitchen">
+      <product>
+        <name>IKEAChair</name>
+        <price>133.490500</price>
+      </product>
+    </section>
     <section name="Bathroom">
       <product>
-        <name>IKEAMirror</name>
-        <price>37.04243400</price>
+        <name>IKEASink</name>
+        <price>254.98044000</price>
       </product>
       <product>
-        <name>IKEASink</name>
-        <price>163.800000</price>
+        <name>IKEAMirror</name>
+        <price>25.4000</price>
       </product>
     </section>
     <section name="Bedroom">
       <product>
         <name>IKEABed</name>
-        <price>589.16</price>
+        <price>222.1800</price>
       </product>
       <product>
         <name>IKEALamp</name>
-        <price>54.756000</price>
-      </product>
-    </section>
-    <section name="Kitchen">
-      <product>
-        <name>IKEAChair</name>
-        <price>124.925814</price>
+        <price>72.8000</price>
       </product>
     </section>
   </manufacturer>
   <manufacturer name="Videnov">
+    <section name="Bathroom">
+      <product>
+        <name>VidenovMirror</name>
+        <price>49.394340</price>
+      </product>
+      <product>
+        <name>VidenovSink</name>
+        <price>96.707520</price>
+      </product>
+    </section>
     <section name="Kitchen">
       <product>
         <name>VidenovTable</name>
-        <price>144.05391000</price>
+        <price>220.8826620000</price>
       </product>
       <product>
         <name>VidenovChair</name>
-        <price>108.172350</price>
+        <price>173.5721395200</price>
       </product>
     </section>
     <section name="Bedroom">
       <product>
         <name>VidenovBed</name>
-        <price>415.26397770000000</price>
-      </product>
-    </section>
-    <section name="Bathroom">
-      <product>
-        <name>VidenovMirror</name>
-        <price>94.851081000000</price>
-      </product>
-      <product>
-        <name>VidenovSink</name>
-        <price>139.5182880000</price>
+        <price>189.4200</price>
       </product>
     </section>
   </manufacturer>

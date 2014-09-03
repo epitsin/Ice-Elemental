@@ -8,20 +8,21 @@
 
     public static class SQLReader
     {
-        private static string connectionStr = "Server=localhost; Database=furnituresystemreports; Uid=root; Pwd=root; pooling=true";
-        private static MySqlConnection connection = new MySqlConnection(connectionStr);
+        private static readonly string connectionStr = "Server=localhost; Database=furnituresystemreports; Uid=root; Pwd=root; pooling=true";
+
+        private static readonly MySqlConnection connection = new MySqlConnection(connectionStr);
 
         public static IList<JsonReport> ReadReportsData()
         {
-            List<JsonReport> furnitureReportData = new List<JsonReport>();
+            var furnitureReportData = new List<JsonReport>();
 
             connection.Open();
             using (connection)
             {
-                MySqlCommand command = new MySqlCommand("SELECT * FROM jsonreports", connection);
-                MySqlDataReader reportsReader = command.ExecuteReader();
+                var command = new MySqlCommand("SELECT * FROM jsonreports", connection);
+                var reportsReader = command.ExecuteReader();
 
-                Console.WriteLine("Listing all reports.\n");
+                Console.WriteLine("Listing all reports.");
                 using (reportsReader)
                 {
                     while (reportsReader.Read())

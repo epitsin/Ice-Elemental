@@ -2,11 +2,12 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+
     using MongoDB.Driver;
 
     public class DataRetriever
     {
-        private MongoDatabase dbContext;
+        private readonly MongoDatabase dbContext;
 
         public DataRetriever(MongoDatabase dbContext)
         {

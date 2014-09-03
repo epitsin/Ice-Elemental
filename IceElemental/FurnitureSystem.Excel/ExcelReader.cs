@@ -6,11 +6,11 @@
     using System.Data.OleDb;
     using System.IO;
 
-    public class ExcelReader
+    public static class ExcelReader
     {
-        public IList<Tuple<string, string, string, int, int, decimal>> GetExtractedFilesInfo(string extractionPath)
+        public static IList<Tuple<string, string, string, int, int, decimal>> GetExtractedFilesInfo(string extractionPath)
         {
-            var connectionStrings = this.CreateConnectionStrings(extractionPath);
+            var connectionStrings = CreateConnectionStrings(extractionPath);
             var listOfItems = new List<Tuple<string, string, string, int, int, decimal>>();
 
             foreach (var connString in connectionStrings)
@@ -51,10 +51,10 @@
             return listOfItems;
         }
 
-        private IList<string> CreateConnectionStrings(string directoryPath)
+        private static IList<string> CreateConnectionStrings(string directoryPath)
         {
             var connectionStrings = new List<string>();
-            var filePaths = this.GetFilePathsWithDfs(directoryPath);
+            var filePaths = GetFilePathsWithDfs(directoryPath);
 
             foreach (var path in filePaths)
             {
@@ -69,7 +69,7 @@
             return connectionStrings;
         }
 
-        private IList<string> GetFilePathsWithDfs(string sourceDirectory)
+        private static IList<string> GetFilePathsWithDfs(string sourceDirectory)
         {
             var filePaths = new List<string>();
 

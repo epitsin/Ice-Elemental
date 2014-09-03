@@ -1,7 +1,6 @@
 ﻿namespace FurnitureSystem.Models
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
 
     public class Price
     {
@@ -14,7 +13,6 @@
 
         public int Id { get; set; }
 
-        [DataMember]
         public decimal Money { get; set; }
     }
 }

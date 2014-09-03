@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="JsonReporter.cs" />
     <Compile Include="JsonReport.cs" />
-    <Compile Include="JsonReporterSeriliazation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

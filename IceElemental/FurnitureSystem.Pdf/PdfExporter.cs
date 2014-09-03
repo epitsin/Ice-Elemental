@@ -3,6 +3,7 @@
     using System;
     using System.IO;
     using System.Linq;
+
     using FurnitureSystem.Data;
     using iTextSharp.text;
     using iTextSharp.text.pdf;
@@ -11,15 +12,15 @@
     {
         public static void Write(FurnitureSystemDbContext database)
         {
-            Document pdfReport = new Document(PageSize.A4, 10, 10, 10, 10);
+            var pdfReport = new Document(PageSize.A4, 10, 10, 10, 10);
 
-            PdfWriter pdfWriter = PdfWriter.GetInstance(pdfReport, new FileStream(@"../../../PDFReports/ShopPdfReport.pdf", FileMode.Create, FileAccess.Write));
+            var pdfWriter = PdfWriter.GetInstance(pdfReport, new FileStream(@"../../../PDFReports/ShopPdfReport.pdf", FileMode.Create, FileAccess.Write));
 
             var shops = database.Shops;
 
             pdfReport.Open();
 
-            PdfPTable header = new PdfPTable(1);
+            var header = new PdfPTable(1);
             header.AddCell("Shops");
             pdfReport.Add(header);
 
@@ -27,11 +28,11 @@
 
             foreach (var shop in shops)
             {
-                PdfPTable shopName = new PdfPTable(1);
+                var shopName = new PdfPTable(1);
                 shopName.AddCell(shop.Name);
                 pdfReport.Add(shopName);
 
-                PdfPTable body = new PdfPTable(3);
+                var body = new PdfPTable(3);
                 body.SetWidths(widths);
 
                 var furniturePieces = shop.FurniturePieces;

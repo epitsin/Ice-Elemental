@@ -22,7 +22,6 @@
             this.repositories = new Dictionary<Type, object>();
         }
 
-        //// should we have such property for all classes????????????????????
         public IGenericRepository<FurniturePiece> FurniturePieces
         {
             get

@@ -1,5 +1,3 @@
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\FurnitureSystem.MongoDb.Data.exe.config
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\FurnitureSystem.MongoDb.Data.exe
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\FurnitureSystem.MongoDb.Data.pdb
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\FurnitureSystem.Models.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\MongoDB.Bson.dll
@@ -8,7 +6,6 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Mongo
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\MongoDB.Bson.xml
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\MongoDB.Driver.xml
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\obj\Debug\FurnitureSystem.MongoDb.Data.csprojResolveAssemblyReference.cache
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\obj\Debug\FurnitureSystem.MongoDb.Data.exe
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\obj\Debug\FurnitureSystem.MongoDb.Data.pdb
 C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\FurnitureSystem.MongoDb.Data.exe.config
 C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\FurnitureSystem.MongoDb.Data.exe
@@ -22,3 +19,6 @@ C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Mong
 C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\obj\Debug\FurnitureSystem.MongoDb.Data.csprojResolveAssemblyReference.cache
 C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\obj\Debug\FurnitureSystem.MongoDb.Data.exe
 C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\obj\Debug\FurnitureSystem.MongoDb.Data.pdb
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\FurnitureSystem.MongoDb.Data.dll.config
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\bin\Debug\FurnitureSystem.MongoDb.Data.dll
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.MongoDb.Data\obj\Debug\FurnitureSystem.MongoDb.Data.dll

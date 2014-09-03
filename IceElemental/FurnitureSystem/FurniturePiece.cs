@@ -1,10 +1,8 @@
 ﻿namespace FurnitureSystem.Models
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
     using FurnitureSystem.Models.Enums;
 
-    [DataContract]
     public class FurniturePiece
     {
         public FurniturePiece()
@@ -12,12 +10,10 @@
             this.Shops = new HashSet<Shop>();
         }
 
-        [DataMember]
         public int Id { get; set; }
 
         public Material Material { get; set; }
 
-        [DataMember]
         public string Name { get; set; }
 
         public virtual Price Price { get; set; }

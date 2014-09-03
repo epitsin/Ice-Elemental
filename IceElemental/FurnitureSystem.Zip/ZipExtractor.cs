@@ -4,7 +4,7 @@
     using System.IO;
     using System.IO.Compression;
 
-    public class ZipExtractor
+    public static class ZipExtractor
     {
         public static void Extract(string zipPath, string extractPath)
         {

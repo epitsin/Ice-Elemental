@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Xml.Linq;
 
-    public class XmlReader
+    public static class XmlReader
     {
         public static List<Tuple<string, string, string, string, int, decimal>> GetObjects(string fileName)
         {

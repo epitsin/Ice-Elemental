@@ -9,7 +9,6 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Conso
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Excel.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.JsonReporter.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Models.dll
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.MongoDb.Data.exe
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.MySql.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.MySQLReader.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.Pdf.dll
@@ -97,3 +96,4 @@ C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Cons
 C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\Telerik.OpenAccess.35.Extensions.xml
 C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\obj\Debug\FurnitureSystem.ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.ConsoleClient\bin\Debug\FurnitureSystem.MongoDb.Data.dll

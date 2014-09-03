@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
     using FurnitureSystem.Data;
     using FurnitureSystem.Excel;
     using FurnitureSystem.JsonReporter;
@@ -10,32 +11,45 @@
     using FurnitureSystem.Models.Enums;
     using FurnitureSystem.MongoDb.Data;
     using FurnitureSystem.MySql;
-    using FurnitureSystem.MySQLReader;
     using FurnitureSystem.Pdf;
     using FurnitureSystem.SQLite.Data;
-    using FurnitureSystem.SQLite.Model;
     using FurnitureSystem.Xml;
     using FurnitureSystem.Zip;
-    using MongoDB.Bson;
     using MongoDB.Driver;
-    using MongoDB.Driver.Builders;
-    using Telerik.OpenAccess;
 
     public class FurnitureSystemEntryPoint
     {
+        private static readonly string zipPath = @"../../../ExcelReports.zip";
+
+        private static readonly string extractPath = @"../../../ExcelReports/";
+
+        private static readonly string mongoDbConnectionString = "mongodb://localhost/";
+
+        private static readonly string excelFilesLocation = "../../../ExcelReports/Read/";
+
+        private static readonly string xmlReportFile = "../../../XMLReports/ShopReport.xml";
+
         public static void Main()
         {
-            string zipPath = @"../../../ExcelReports.zip";
-            string extractPath = @"../../../ExcelReports/";
+            Console.WriteLine("Started extracting the zip file...");
+
             ZipExtractor.Extract(zipPath, extractPath);
+
+            Console.WriteLine("Zip file extracted.");
+            Console.WriteLine("Connecting to the SQL Server...");
 
             ////SQL SERVER DATABASE
             var sqlServerDatabase = new FurnitureSystemDbContext();
 
+            Console.WriteLine("Successfully connected to the SQL Server.");
+            Console.WriteLine("Connecting to the MongoDb Server...");
+
             ////MONGODB DATABASE
-            var connectionStr = "mongodb://localhost/";
-            var mongoClient = new MongoClient(connectionStr);
+            var mongoClient = new MongoClient(mongoDbConnectionString);
             var mongoServer = mongoClient.GetServer();
+
+            Console.WriteLine("Successfully connected to the MongoDb Server.");
+
             var mongoDatabase = mongoServer.GetDatabase("ShopSystem");
 
             ReadAndSaveDataFromMongoToSqlServer(sqlServerDatabase, mongoDatabase);
@@ -44,12 +58,20 @@
 
             MakeConnectionsBetweenShopsAndFurniture(sqlServerDatabase);
 
+            Console.WriteLine("Exporting data to a PDF file...");
+
             PdfExporter.Write(sqlServerDatabase);
+
+            Console.WriteLine("PDF file is created/updated.");
 
             XmlWriter.GenerateReports(sqlServerDatabase);
 
+            Console.WriteLine("Connecting to the MySql Server...");
+
             ////MYSQL DATABASE
             var mySqlDatabase = new FurnitureSystemEntities();
+
+            Console.WriteLine("Successfully connected to the MySql Server.");
 
             var json = new JsonReporter();
             json.Report();
@@ -58,8 +80,12 @@
 
             var dataFromMySql = mySqlDatabase.Jsonreports;
 
+            Console.WriteLine("Connecting to the SQLite database...");
+
             ////SQLITE DATABASE
             var customerData = new CustomerContext();
+
+            Console.WriteLine("Successfully connected to the SQLite database.");
 
             ReadFromMySqlAndSqLiteAndWriteInExcel(dataFromMySql, customerData);
         }
@@ -86,12 +112,16 @@
         {
             if (!shopSystemDb.CollectionExists("ShopSystem"))
             {
+                Console.WriteLine("Seeding initial data in the MongoDb database...");
+
                 var seeder = new Seeder(shopSystemDb);
                 seeder.SeedShops();
             }
 
             if (sqlServerDatabase.Shops.Count() == 0)
             {
+                Console.WriteLine("Saving the data from MongoDb to the Sql Server database...");
+
                 var retriever = new DataRetriever(shopSystemDb);
                 var shops = retriever.GetShopsLocal();
                 foreach (var item in shops)
@@ -120,10 +150,12 @@
 
         private static void ReadAndSaveDataFromExcelToSqlServer(FurnitureSystemDbContext sqlServerDatabase)
         {
-            var excel = new ExcelReader();
-            var items = excel.GetExtractedFilesInfo("../../../ExcelReports/Read/");
+            Console.WriteLine("Extracting data from the excel files...");
+
+            var items = ExcelReader.GetExtractedFilesInfo(excelFilesLocation);
             if (sqlServerDatabase.Manufacturers.Count() == 0)
             {
+                Console.WriteLine("Reading and saving the data to the Sql Server...");
                 foreach (var item in items)
                 {
                     var product = new FurniturePiece
@@ -180,7 +212,9 @@
 
         private static void ReadXmlUpdateSqlAndMongoBases(FurnitureSystemDbContext sqlServerDatabase, MongoDatabase mongoDatabase)
         {
-            var shopsWithFurniture = XmlReader.GetObjects("../../../XMLReports/ShopReport.xml");
+            Console.WriteLine("Getting new data from the xml file...");
+
+            var shopsWithFurniture = XmlReader.GetObjects(xmlReportFile);
 
             foreach (var shop in shopsWithFurniture)
             {
@@ -208,22 +242,26 @@
             }
 
             sqlServerDatabase.SaveChanges();
+
+            Console.WriteLine("Data updated in the MongoDb and Sql Server databases.");
         }
 
         private static void ReadFromMySqlAndSqLiteAndWriteInExcel(IQueryable<Jsonreport> dataFromMySql, CustomerContext sqLiteDatabase)
         {
+            Console.WriteLine("Extracting data from MySql and SQLite databases...");
+
             var dataFromSqLite = sqLiteDatabase.Customers.ToList();
             var customers = new List<Tuple<string, string, int, decimal>>();
 
             foreach (var customer in dataFromSqLite)
             {
-                var id1 = customer.ProductId;
                 var product = dataFromMySql.Select(x => new
                 {
                     Id = x.Id,
                     Name = x.Name,
                     Price = x.Price
                 }).FirstOrDefault(x => x.Id == customer.ProductId);
+
                 var cName = customer.Name;
                 var pName = product.Name;
                 var quantity = customer.ProductQuantity;
@@ -233,7 +271,11 @@
                 customers.Add(newCustomer);
             }
 
+            Console.WriteLine("Generating excel report...");
+
             ExcelWriter.GenerateReports(customers);
+
+            Console.WriteLine("Excel report generated.");
         }
     }
 }

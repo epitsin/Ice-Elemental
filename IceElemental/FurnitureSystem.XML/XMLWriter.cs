@@ -2,13 +2,15 @@
 {
     using System.Linq;
     using System.Xml.Linq;
+
     using FurnitureSystem.Data;
 
-    public class XmlWriter
+    public static class XmlWriter
     {
+        public static string Path = "../../../XMLReports/ManufacturersReport.xml";
+
         public static void GenerateReports(FurnitureSystemDbContext database)
         {
-            var path = "../../../XMLReports/ManufacturersReport.xml";
             var root = new XElement("manufacturers-and-their-products");
 
             var manufacturers = database.Manufacturers;
@@ -40,7 +42,7 @@
                 root.Add(currentManufacturer);
             }
 
-            root.Save(path);
+            root.Save(Path);
         }
     }
 }

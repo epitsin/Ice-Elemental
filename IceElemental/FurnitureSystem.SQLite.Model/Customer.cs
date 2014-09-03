@@ -1,8 +1,5 @@
 ﻿namespace FurnitureSystem.SQLite.Model
 {
-    using System;
-    using System.Linq;
-
     public class Customer
     {
         public long CustomerId { get; set; }

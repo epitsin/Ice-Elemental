@@ -5,6 +5,6 @@
 
     public interface IFurnitureSystemData
     {
-        IGenericRepository<FurniturePiece> FurniturePieces { get; } // Manufacturers, Shops??????????
+        IGenericRepository<FurniturePiece> FurniturePieces { get; }
     }
 }
