@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shops-with-furniture>
+    <furnitures>
+      <name>Pesho</name>
+      <discount>10</discount>
+    </furnitures>
+    <furnitures>
+      <name>Gosho</name>
+      <discount>5</discount>
+    </furnitures>
+</shops-with-furniture>
