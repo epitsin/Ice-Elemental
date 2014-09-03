@@ -8,14 +8,10 @@
 
     public class ExcelReader
     {
-        //TO DO: returns list of products
-
-        // private const string Provider = "Provider=Microsoft.ACE.OLEDB.12.0;";
-        // private const string ExtendedProperties = @";Extended Properties='Excel 12.0 xml;HDR=Yes';";
-        public IList<Tuple<string, string>> GetExtractedFilesInfo(string extractionPath)
+        public IList<Tuple<string, string, string, int, int, decimal>> GetExtractedFilesInfo(string extractionPath)
         {
             var connectionStrings = this.CreateConnectionStrings(extractionPath);
-            var listOfItems = new List<Tuple<string, string>>();
+            var listOfItems = new List<Tuple<string, string, string, int, int, decimal>>();
 
             foreach (var connString in connectionStrings)
             {
@@ -41,10 +37,14 @@
                         {
                             while (reader.Read())
                             {
-                                var name = reader["Name"].ToString();
-                                var location = reader["Location"].ToString();
+                                var manufacturer = reader["ManufacturerName"].ToString();
+                                var section = reader["SectionName"].ToString();
+                                var furniture = reader["FurnitureName"].ToString();
+                                var material = int.Parse(reader["Material"].ToString());
+                                var type = int.Parse(reader["Type"].ToString());
+                                var price = decimal.Parse(reader["Price"].ToString());
 
-                                listOfItems.Add(new Tuple<string, string>(name, location));
+                                listOfItems.Add(new Tuple<string, string, string, int, int, decimal>(manufacturer, section, furniture, material, type, price));
                             }
                         }
                     }

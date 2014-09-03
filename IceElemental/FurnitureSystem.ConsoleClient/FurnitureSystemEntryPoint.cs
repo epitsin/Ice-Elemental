@@ -34,12 +34,42 @@
             //ZipExtractor.Extract(zipPath, extractPath);
 
             var excel = new ExcelReader();
-            var items = excel.GetExtractedFilesInfo("../../../ExcelReports/");
-            foreach (var item in items)
+            var items = excel.GetExtractedFilesInfo("../../../ExcelReports/Read/");
+            var db = new FurnitureSystemDbContext();
+            using (db)
             {
-                Console.WriteLine(item.Item1 + " -> " + item.Item2);
-            }
+                foreach (var item in items)
+                {
+                    var manufacturer = new Manufacturer
+                    {
+                        Name = item.Item1
+                    };
+                    var section = new Section
+                    {
+                        Name = item.Item2
+                    };
+                    var product = new FurniturePiece
+                    {
+                        Name = item.Item3,
+                        Material = (Material)item.Item4,
+                        Type = (FurnitureType)item.Item5,
+                        Price = new Price
+                        {
+                            Money = item.Item6
+                        }
+                    };
 
+                    db.Manufacturers.Add(manufacturer);
+                    db.Sections.Add(section);
+                    db.FurniturePieces.Add(product);
+                    db.SaveChanges();
+                }
+
+                foreach (var item in db.FurniturePieces)
+                {
+                    Console.WriteLine(item.Name + " -> " + item.Section.Name);
+                }
+            }
             //ExcelWriter.GenerateReports();
 
             //WORKS FROM HERE
