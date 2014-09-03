@@ -1,33 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <shops-with-furniture>
-  <shop name="Alfredo" location="SofiaMalinov50">
-    <furnitures>
-      <name>Pesho</name>
-      <price>15.50</price>
-    </furnitures>
+  <shop name="Conflux Shop">
+	  <country>Erathia</country>
+	  <city>Electrising</city>
+	  <street>Fleogan Mills</street>
+	  <number>41</number>
+	  <profit>0.17</profit>
   </shop>
-  <shop name="Alfredo" location="SofiaMalinov50">
-    <furnitures>
-      <name>Pesho</name>
-      <price>15.50</price>
-    </furnitures>
-  </shop>
-  <shop name="Alfredo" location="SofiaMalinov50">
-    <furnitures>
-      <name>Pesho</name>
-      <price>15.50</price>
-    </furnitures>
-  </shop>
-  <shop name="Alfredo" location="SofiaMalinov50">
-    <furnitures>
-      <name>Pesho</name>
-      <price>15.50</price>
-    </furnitures>
-  </shop>
-  <shop name="Alfredo" location="SofiaMalinov50">
-    <furnitures>
-      <name>Pesho</name>
-      <price>15.50</price>
-    </furnitures>
+  <shop name="Conflux Shop2">
+	  <country>Erathia</country>
+	  <city>Solium</city>
+	  <street>Frisan Lane</street>
+	  <number>36</number>
+	  <profit>0.3</profit>
   </shop>
 </shops-with-furniture>

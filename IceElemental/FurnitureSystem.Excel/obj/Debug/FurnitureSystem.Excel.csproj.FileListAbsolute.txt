@@ -1,6 +1,0 @@
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\bin\Debug\FurnitureSystem.Excel.dll.config
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\bin\Debug\FurnitureSystem.Excel.dll
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\bin\Debug\FurnitureSystem.Excel.pdb
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\obj\Debug\FurnitureSystem.Excel.dll
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\obj\Debug\FurnitureSystem.Excel.pdb
-C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\obj\Debug\FurnitureSystem.Excel.csprojResolveAssemblyReference.cache

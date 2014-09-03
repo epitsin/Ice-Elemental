@@ -18,16 +18,14 @@
         {
             var innitialShops = new List<ShopLocation> 
             {
-                new ShopLocation("Trendy Shop", "Bulgaria", "Sofia", "ul. Tsvetna gradina 2", 50, 0.1m),
-                new ShopLocation("Mediocre Shop", "Bulgaria", "Plovdiv", "kv. Kiochuk Parizh", 34, 0.15m),
-                new ShopLocation("Shop Za Naroda", "Bulgaria", "Pernik", "mestnost Do Zavoda", 23, 0.3m),
-                new ShopLocation("Very Expensive Furniture", "Bulgaria", "Sofia", "ul. Fritiof Nansen 6", 12, 0.23m),
-                new ShopLocation("Effecta", "Bulgaria", "Sofia", "bul. Evlogi Georgiev 34", 5, 0.2m),
-                new ShopLocation("Kitaiski Mebeli", "Bulgaria", "Burgas", "ul. Kitaiska Stena 4", 45, 0.4m),
-                new ShopLocation("Furrniture Shop", "Bulgaria", "Stara Zagora", "bul. Simeon Veliki 6", 30, 0.27m),
-                new ShopLocation("Dolce Casa", "Bulgaria", "Sofia", "bul. Bulgaria 23", 47, 0.23m),
-                new ShopLocation("Casa Viva", "Bulgaria", "Varna", "ul.3ti mart 20", 41, 0.17m),
-                new ShopLocation("Platan", "Bulgaria", "Sofia", "ul. Saborna 14", 36, 0.3m)
+                new ShopLocation("Castle Shop", "Erathia", "Middleheim", "Alexandretta", 50, 0.1m),
+                new ShopLocation("Rampart Shop", "Erathia", "Gladeroot", "Wise Oak", 34, 0.15m),
+                new ShopLocation("Tower Shop", "Erathia", "Cloudfire", "Mystos", 23, 0.3m),
+                new ShopLocation("Inferno Shop", "Erathia", "Brimstone", "Daemon Gate", 12, 0.23m),
+                new ShopLocation("Necropolis Shop", "Erathia", "Sanctum", "Dark Cloud", 5, 0.2m),
+                new ShopLocation("Dungeon Shop", "Erathia", "Darkburrow", "Lost Hold", 45, 0.4m),
+                new ShopLocation("Stronghold Shop", "Erathia", "Rockwarren", "Drago Breach", 30, 0.27m),
+                new ShopLocation("Fortress Shop", "Erathia", "Mosswood", "Hermit Cove", 47, 0.23m)
             };
 
             if (this.dbContext.GetCollection("ShopSystem") == null)

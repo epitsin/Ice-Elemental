@@ -10,6 +10,7 @@
     using FurnitureSystem.Excel;
     using FurnitureSystem.Zip;
     using FurnitureSystem.JsonReporter;
+    using MongoDB.Bson;
     using Telerik.OpenAccess;
     using FurnitureSystem.MySql;
     using FurnitureSystem.MongoDb.Data;
@@ -17,12 +18,78 @@
     using FurnitureSystem.MySQLReader;
     using FurnitureSystem.SQLite.Model;
     using FurnitureSystem.SQLite.Data;
+    using MongoDB.Driver.Builders;
 
     public class FurnitureSystemEntryPoint
     {
+        private static void ReadXmlUpdateSqlAndMongoBases(FurnitureSystemDbContext database, MongoDatabase mongoDatabase)
+        {
+            var shopsWithFurniture = XmlReader.GetObjects("../../../XMLReports/ShopReport.xml");
 
+            using (database)
+            {
+                foreach (var shop in shopsWithFurniture)
+                {
+                    var newShop = new Shop
+                    {
+                        Name = shop.Item1,
+                        ProfitPercentage = shop.Item6
+                    };
+
+                    database.Shops.Add(newShop);
+
+                    database.Locations.Add(new Location
+                    {
+                        Shop = newShop,
+                        Country = shop.Item2,
+                        City = shop.Item3,
+                        Street = shop.Item4,
+                        Number = shop.Item5
+                    });
+
+                    var newMongoShop = new ShopLocation(shop.Item1, shop.Item2, shop.Item3, shop.Item4, shop.Item5, shop.Item6);
+                    var shops = mongoDatabase.GetCollection("ShopSystem");
+
+                    shops.Insert(newMongoShop);
+                }
+
+                database.SaveChanges();
+            }
+        }
         public static void Main()
         {
+            var db = new FurnitureSystemDbContext();
+
+
+            var connectionStr = "mongodb://localhost/";
+            var mongoClient = new MongoClient(connectionStr);
+            var mongoServer = mongoClient.GetServer();
+            var shopSystemDb = mongoServer.GetDatabase("ShopSystem");
+
+            ReadXmlUpdateSqlAndMongoBases(db, shopSystemDb);
+
+            var retriever = new DataRetriever(shopSystemDb);
+            var shops = retriever.GetShopsLocal();
+
+            foreach (var item in shops)
+            {
+                Console.WriteLine(item.Name + " -> " + item.Street);
+            }
+
+
+            //var customerData = new CustomerContext();
+
+            //var customer = new Customer
+            //{
+            //    Name = "Pesho",
+            //    ProductId = 1,
+            //    ProductQuantity = 1
+            //};
+
+            //customerData.Customers.Add(customer);
+
+            //customerData.SaveChanges();
+
             //var mysql = new FurnitureSystemEntities();
 
             //var json = new JsonReporter();
@@ -38,96 +105,96 @@
             //string extractPath = @"../../../";
             //ZipExtractor.Extract(zipPath, extractPath);
 
-            var excel = new ExcelReader();
-            var items = excel.GetExtractedFilesInfo("../../../ExcelReports/Read/");
-            var db = new FurnitureSystemDbContext();
-            using (db)
-            {
-                //foreach (var item in items)
-                //{
-                //    var manufacturer = new Manufacturer
-                //    {
-                //        Name = item.Item1
-                //    };
-                //    var section = new Section
-                //    {
-                //        Name = item.Item2
-                //    };
-                //    var product = new FurniturePiece
-                //    {
-                //        Name = item.Item3,
-                //        Material = (Material)item.Item4,
-                //        Type = (FurnitureType)item.Item5,
-                //        Price = new Price
-                //        {
-                //            Money = item.Item6
-                //        }
-                //    };
+            //var excel = new ExcelReader();
+            //var items = excel.GetExtractedFilesInfo("../../../ExcelReports/Read/");
+            //var db = new FurnitureSystemDbContext();
+            //using (db)
+            //{
+            //foreach (var item in items)
+            //{
+            //    var manufacturer = new Manufacturer
+            //    {
+            //        Name = item.Item1
+            //    };
+            //    var section = new Section
+            //    {
+            //        Name = item.Item2
+            //    };
+            //    var product = new FurniturePiece
+            //    {
+            //        Name = item.Item3,
+            //        Material = (Material)item.Item4,
+            //        Type = (FurnitureType)item.Item5,
+            //        Price = new Price
+            //        {
+            //            Money = item.Item6
+            //        }
+            //    };
 
-                //    db.Manufacturers.Add(manufacturer);
-                //    db.Sections.Add(section);
-                //    db.FurniturePieces.Add(product);
-                //    db.SaveChanges();
-                //}
+            //    db.Manufacturers.Add(manufacturer);
+            //    db.Sections.Add(section);
+            //    db.FurniturePieces.Add(product);
+            //    db.SaveChanges();
+            //}
 
-                //foreach (var item in db.FurniturePieces)
-                //{
-                //    Console.WriteLine(item.Name + " -> " + item.Section.Name);
-                //}
+            //foreach (var item in db.FurniturePieces)
+            //{
+            //    Console.WriteLine(item.Name + " -> " + item.Section.Name);
+            //}
 
 
-                //var connectionStr = "mongodb://localhost/";
-                //var mongoClient = new MongoClient(connectionStr);
-                //var mongoServer = mongoClient.GetServer();
-                //var shopSystemDb = mongoServer.GetDatabase("ShopSystem");
-                //var seeder = new Seeder(shopSystemDb);
-                //seeder.SeedShops();
-                //var retriever = new DataRetriever(shopSystemDb);
-                //var shops = retriever.GetShopsLocal();
-                //foreach (var item in shops)
-                //{
-                //    var shop = new Shop
-                //    {
-                //        Name = item.Name
-                //    };
-                //    var location = new Location
-                //    {
-                //        Shop = shop,
-                //        Country = item.Country,
-                //        City = item.City,
-                //        Street = item.Street,
-                //        Number = item.StreetNumber
-                //    };
-                //    db.Shops.Add(shop);
-                //    db.Locations.Add(location);
-                //    db.SaveChanges();
-                //}
+            //var connectionStr = "mongodb://localhost/";
+            //var mongoClient = new MongoClient(connectionStr);
+            //var mongoServer = mongoClient.GetServer();
+            //var shopSystemDb = mongoServer.GetDatabase("ShopSystem");
+            //var seeder = new Seeder(shopSystemDb);
+            //seeder.SeedShops();
+            //var retriever = new DataRetriever(shopSystemDb);
+            //var shops = retriever.GetShopsLocal();
+            //foreach (var item in shops)
+            //{
+            //    var shop = new Shop
+            //    {
+            //        Name = item.Name
+            //    };
+            //    var location = new Location
+            //    {
+            //        Shop = shop,
+            //        Country = item.Country,
+            //        City = item.City,
+            //        Street = item.Street,
+            //        Number = item.StreetNumber
+            //    };
+            //    db.Shops.Add(shop);
+            //    db.Locations.Add(location);
+            //    db.SaveChanges();
+            //}
 
-                //foreach (var item in db.Shops)
-                //{
-                //    Console.WriteLine(item.Name + " -> " + item.Location.Street);
-                //}
+            //foreach (var item in db.Shops)
+            //{
+            //    Console.WriteLine(item.Name + " -> " + item.Location.Street);
+            //}
 
-                //int start = 1;
-                //foreach (var item in db.Shops)
-                //{
-                //    for (int i = 0; i < 5; i++)
-                //    {
-                //        var furniturePiece = db.FurniturePieces.FirstOrDefault(x => x.Id == i);
-                //        item.FurniturePieces.Add(furniturePiece);
-                //    }
-                //}
+            //int start = 1;
+            //foreach (var item in db.Shops)
+            //{
+            //    for (int i = 0; i < 5; i++)
+            //    {
+            //        var furniturePiece = db.FurniturePieces.FirstOrDefault(x => x.Id == i);
+            //        item.FurniturePieces.Add(furniturePiece);
+            //    }
+            //}
 
-                //db.SaveChanges();
-                foreach (var shop in db.FurniturePieces)
-                {
-                    Console.WriteLine(shop.Name);
-                    foreach (var furn in shop.Shops)
-                    {
-                        Console.WriteLine("    " + furn.Name);
-                    }
-                }
-            }
+            //db.SaveChanges();
+            //    foreach (var shop in db.FurniturePieces)
+            //    {
+            //        Console.WriteLine(shop.Name);
+            //        foreach (var furn in shop.Shops)
+            //        {
+            //            Console.WriteLine("    " + furn.Name);
+            //        }
+            //    }
+            //}
 
             //ExcelWriter.GenerateReports();
 

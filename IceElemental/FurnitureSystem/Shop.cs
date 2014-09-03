@@ -19,5 +19,7 @@
 
         [Required]
         public string Name { get; set; }
+
+        public decimal ProfitPercentage { get; set; }
     }
 }
