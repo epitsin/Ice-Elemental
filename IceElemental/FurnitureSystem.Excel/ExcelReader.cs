@@ -15,16 +15,13 @@
 
             foreach (var connString in connectionStrings)
             {
-
                 var excelConnection = new OleDbConnection(connString);
                 excelConnection.Open();
 
                 var excelSchema = excelConnection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
                 string sheetName = excelSchema.Rows[0]["TABLE_NAME"].ToString();
-                ;
 
                 var excelCommand = new OleDbCommand(@"SELECT * FROM [" + sheetName + "]", excelConnection);
-
 
                 using (excelConnection)
                 {

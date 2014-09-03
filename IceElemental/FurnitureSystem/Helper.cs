@@ -1,6 +1,7 @@
-﻿using System.Runtime.Serialization;
-namespace FurnitureSystem.Models
+﻿namespace FurnitureSystem.Models
 {
+    using System.Runtime.Serialization;
+
     [DataContract]
     public class Helper
     {

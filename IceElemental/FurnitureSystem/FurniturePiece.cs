@@ -1,8 +1,8 @@
 ﻿namespace FurnitureSystem.Models
 {
     using System.Collections.Generic;
-    using FurnitureSystem.Models.Enums;
     using System.Runtime.Serialization;
+    using FurnitureSystem.Models.Enums;
 
     [DataContract]
     public class FurniturePiece
@@ -29,7 +29,6 @@
         public int SectionId { get; set; }
 
         public virtual ICollection<Shop> Shops { get; set; }
-
 
         public FurnitureType Type { get; set; }
     }

@@ -7,7 +7,6 @@
 
     public interface IFurnitureSystemDbContext
     {
-
         IDbSet<FurniturePiece> FurniturePieces { get; set; }
 
         IDbSet<Location> Locations { get; set; }

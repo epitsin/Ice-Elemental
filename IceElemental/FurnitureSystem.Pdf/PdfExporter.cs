@@ -11,10 +11,9 @@
     {
         public static void Write(FurnitureSystemDbContext database)
         {
-
             Document pdfReport = new Document(PageSize.A4, 10, 10, 10, 10);
 
-            PdfWriter pdfWriter = PdfWriter.GetInstance(pdfReport,new FileStream(@"../../../PDFReports/ShopPdfReport.pdf", FileMode.Create, FileAccess.Write));
+            PdfWriter pdfWriter = PdfWriter.GetInstance(pdfReport, new FileStream(@"../../../PDFReports/ShopPdfReport.pdf", FileMode.Create, FileAccess.Write));
 
             var shops = database.Shops;
 

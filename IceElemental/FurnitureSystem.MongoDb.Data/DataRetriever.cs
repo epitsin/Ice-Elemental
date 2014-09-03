@@ -1,8 +1,8 @@
 ﻿namespace FurnitureSystem.MongoDb.Data
 {
     using System.Collections.Generic;
-    using MongoDB.Driver;
     using System.Linq;
+    using MongoDB.Driver;
 
     public class DataRetriever
     {

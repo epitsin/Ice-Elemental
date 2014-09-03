@@ -22,7 +22,6 @@
                 var profit = decimal.Parse(furniture.Element("profit").Value);
 
                 shopsWithFurniture.Add(new Tuple<string, string, string, string, int, decimal>(shopName, country, city, street, number, profit));
-
             }
 
             return shopsWithFurniture;

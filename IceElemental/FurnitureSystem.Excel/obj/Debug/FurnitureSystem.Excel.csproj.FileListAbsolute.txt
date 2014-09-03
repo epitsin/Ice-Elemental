@@ -3,3 +3,9 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\bin\Debug\FurnitureSystem.Excel.pdb
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\obj\Debug\FurnitureSystem.Excel.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\obj\Debug\FurnitureSystem.Excel.pdb
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\bin\Debug\FurnitureSystem.Excel.dll.config
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\bin\Debug\FurnitureSystem.Excel.dll
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\bin\Debug\FurnitureSystem.Excel.pdb
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\obj\Debug\FurnitureSystem.Excel.csprojResolveAssemblyReference.cache
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\obj\Debug\FurnitureSystem.Excel.dll
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.Excel\obj\Debug\FurnitureSystem.Excel.pdb

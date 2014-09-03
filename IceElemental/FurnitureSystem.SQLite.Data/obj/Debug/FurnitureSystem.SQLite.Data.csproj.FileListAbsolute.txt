@@ -10,3 +10,15 @@ C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLit
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\obj\Debug\FurnitureSystem.SQLite.Data.csprojResolveAssemblyReference.cache
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\obj\Debug\FurnitureSystem.SQLite.Data.dll
 C:\Users\Elena\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\obj\Debug\FurnitureSystem.SQLite.Data.pdb
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Data.dll.config
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Data.dll
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Data.pdb
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\EntityFramework.dll
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Model.dll
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\FurnitureSystem.SQLite.Model.pdb
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\EntityFramework.xml
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\obj\Debug\FurnitureSystem.SQLite.Data.csprojResolveAssemblyReference.cache
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\obj\Debug\FurnitureSystem.SQLite.Data.dll
+C:\Users\Evil-A\Documents\GitHub\Ice-Elemental\IceElemental\FurnitureSystem.SQLite.Data\obj\Debug\FurnitureSystem.SQLite.Data.pdb

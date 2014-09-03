@@ -1,15 +1,15 @@
 ﻿namespace FurnitureSystem.MySQLReader
 {
     using System;
-    using System.Linq;
-    using MySql.Data.MySqlClient;
     using System.Collections.Generic;
+    using System.Linq;
     using FurnitureSystem.JsonReporter;
+    using MySql.Data.MySqlClient;
 
     public static class SQLReader
     {
-        static string connectionStr = "Server=localhost; Database=furnituresystemreports; Uid=root; Pwd=root; pooling=true";
-        static MySqlConnection connection = new MySqlConnection(connectionStr);
+        private static string connectionStr = "Server=localhost; Database=furnituresystemreports; Uid=root; Pwd=root; pooling=true";
+        private static MySqlConnection connection = new MySqlConnection(connectionStr);
 
         public static IList<JsonReport> ReadReportsData()
         {
@@ -32,9 +32,9 @@
 
                         furnitureReportData.Add(new JsonReport
                         {
-                            FurnitureId=furnitureId,
-                            FurnitureName=furnitureName,
-                            Price=furniturePrice
+                            FurnitureId = furnitureId,
+                            FurnitureName = furnitureName,
+                            Price = furniturePrice
                         });
                     }
                 }

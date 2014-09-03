@@ -1,25 +1,25 @@
 ﻿namespace FurnitureSystem.ConsoleClient
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using FurnitureSystem.Data;
+    using FurnitureSystem.Excel;
+    using FurnitureSystem.JsonReporter;
     using FurnitureSystem.Models;
     using FurnitureSystem.Models.Enums;
-    using FurnitureSystem.Pdf;
-    using FurnitureSystem.Xml;
-    using FurnitureSystem.Excel;
-    using FurnitureSystem.Zip;
-    using FurnitureSystem.JsonReporter;
-    using MongoDB.Bson;
-    using Telerik.OpenAccess;
-    using FurnitureSystem.MySql;
     using FurnitureSystem.MongoDb.Data;
-    using MongoDB.Driver;
+    using FurnitureSystem.MySql;
     using FurnitureSystem.MySQLReader;
-    using FurnitureSystem.SQLite.Model;
+    using FurnitureSystem.Pdf;
     using FurnitureSystem.SQLite.Data;
+    using FurnitureSystem.SQLite.Model;
+    using FurnitureSystem.Xml;
+    using FurnitureSystem.Zip;
+    using MongoDB.Bson;
+    using MongoDB.Driver;
     using MongoDB.Driver.Builders;
-    using System.Collections.Generic;
+    using Telerik.OpenAccess;
 
     public class FurnitureSystemEntryPoint
     {
@@ -29,10 +29,10 @@
             string extractPath = @"../../../ExcelReports/";
             ZipExtractor.Extract(zipPath, extractPath);
 
-            //SQL SERVER DATABASE
+            ////SQL SERVER DATABASE
             var sqlServerDatabase = new FurnitureSystemDbContext();
 
-            //MONGODB DATABASE
+            ////MONGODB DATABASE
             var connectionStr = "mongodb://localhost/";
             var mongoClient = new MongoClient(connectionStr);
             var mongoServer = mongoClient.GetServer();
@@ -48,7 +48,7 @@
 
             XmlWriter.GenerateReports(sqlServerDatabase);
 
-            //MYSQL DATABASE
+            ////MYSQL DATABASE
             var mySqlDatabase = new FurnitureSystemEntities();
 
             var json = new JsonReporter();
@@ -58,7 +58,7 @@
 
             var dataFromMySql = mySqlDatabase.Jsonreports;
 
-            //SQLITE DATABASE
+            ////SQLITE DATABASE
             var customerData = new CustomerContext();
 
             ReadFromMySqlAndSqLiteAndWriteInExcel(dataFromMySql, customerData);
@@ -77,7 +77,7 @@
                     var index = randomGenerator.Next(1, 16);
                     var furniturePiece = furniture.FirstOrDefault(x => x.Id == index);
                     shop.FurniturePieces.Add(furniturePiece);
-                    furniturePiece.Price.Money *= (1 + shop.ProfitPercentage);
+                    furniturePiece.Price.Money *= 1 + shop.ProfitPercentage;
                 }
             }
         }
@@ -89,6 +89,7 @@
                 var seeder = new Seeder(shopSystemDb);
                 seeder.SeedShops();
             }
+
             if (sqlServerDatabase.Shops.Count() == 0)
             {
                 var retriever = new DataRetriever(shopSystemDb);
@@ -146,7 +147,6 @@
                         Name = item.Item1
                     };
 
-
                     var existingManufacturer = sqlServerDatabase.Manufacturers.FirstOrDefault(x => x.Name == item.Item1);
 
                     if (existingManufacturer == null)
@@ -177,6 +177,7 @@
                 }
             }
         }
+
         private static void ReadXmlUpdateSqlAndMongoBases(FurnitureSystemDbContext sqlServerDatabase, MongoDatabase mongoDatabase)
         {
             var shopsWithFurniture = XmlReader.GetObjects("../../../XMLReports/ShopReport.xml");
