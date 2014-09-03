@@ -14,24 +14,21 @@ using System.Data.OleDb;
 
             DataTable excelSchema = excelConnection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
             string sheetName = excelSchema.Rows[0]["TABLE_NAME"].ToString();
-
-            var excelCommand = new OleDbCommand(@"INSERT INTO [" + sheetName + @"] VALUES (@customerName, @productName, @productQuantity, @productPrice)", excelConnection);
-
-            foreach (var customer in customers)
-            {
-                excelCommand.Parameters.AddWithValue("@customerName", customer.Item1);
-                excelCommand.Parameters.AddWithValue("@productName", customer.Item2);
-                excelCommand.Parameters.AddWithValue("@productQuantity", customer.Item3);
-                excelCommand.Parameters.AddWithValue("@productPrice", customer.Item4);
-            }
-
+            
             using (excelConnection)
             {
-                for (int i = 0; i < 1; i++)
+                foreach (var customer in customers)
                 {
-                    var queryResult = excelCommand.ExecuteNonQuery();
+                    var excelCommand = new OleDbCommand(@"INSERT INTO [" + sheetName + @"] VALUES (@customerName, @productName, @productQuantity, @productPrice, @totalIncome)", excelConnection);
 
-                    Console.WriteLine("({0} row(s) affected)", queryResult);
+                    excelCommand.Parameters.AddWithValue("@customerName", customer.Item1);
+                    excelCommand.Parameters.AddWithValue("@productName", customer.Item2);
+                    excelCommand.Parameters.AddWithValue("@productQuantity", customer.Item3);
+                    excelCommand.Parameters.AddWithValue("@productPrice", customer.Item4);
+                    excelCommand.Parameters.AddWithValue("@totalIncome", customer.Item3*customer.Item4);
+                    excelCommand.ExecuteNonQuery();
+
+                    Console.WriteLine("Added {0} customer to the excel table.", customer.Item1);
                 }
             }
         }

@@ -49,8 +49,8 @@ namespace FurnitureSystem.Excel {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../../ExcelReports/Furniture2007" +
-            ".xlsx;Extended Properties=\'Excel 12.0 xml;HDR=Yes\';")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../../ExcelReports/Write/Furnitu" +
+            "re2007.xlsx;Extended Properties=\'Excel 12.0 xml;HDR=Yes\';")]
         public string writerConnection {
             get {
                 return ((string)(this["writerConnection"]));

@@ -67,10 +67,12 @@
             //var mongoClient = new MongoClient(connectionStr);
             //var mongoServer = mongoClient.GetServer();
             //var mongoDatabase = mongoServer.GetDatabase("ShopSystem");
-            
+
 
             //ReadXmlUpdateSqlAndMongoBases(sqlServerDatabase, mongoDatabase);
 
+            //var json = new JsonReporter();
+            //json.Report();
 
             var mySqlDatabase = new FurnitureSystemEntities();
 
@@ -80,10 +82,27 @@
             var customerData = new CustomerContext();
             var dataFromSqLite = customerData.Customers.ToList();
             var customers = new List<Tuple<string, string, int, decimal>>();
+
+            foreach (var cust in dataFromSqLite)
+            {
+                Console.WriteLine(cust.ProductId);
+            }
+
+
             foreach (var customer in dataFromSqLite)
             {
-                var product = dataFromMySql.FirstOrDefault(x=>x.Id == customer.ProductId);
-                var newCustomer = new Tuple<string, string, int, decimal>(customer.Name, product.Name, customer.ProductQuantity, decimal.Parse(product.Price));
+                var id1 = customer.ProductId;
+                var product = dataFromMySql.Select(x => new
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Price = x.Price
+                }).FirstOrDefault(x => x.Id == customer.ProductId);
+                var cName = customer.Name;
+                var pName = product.Name;
+                var quantity = customer.ProductQuantity;
+                var price = decimal.Parse(product.Price);
+                var newCustomer = new Tuple<string, string, int, decimal>(cName, pName, quantity, price);
 
                 customers.Add(newCustomer);
             }
@@ -103,8 +122,6 @@
 
             //var mysql = new FurnitureSystemEntities();
 
-            //var json = new JsonReporter();
-            //json.Report();
 
 
             //var mysql = new FurnitureSystemEntities();
