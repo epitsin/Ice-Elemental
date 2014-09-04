@@ -39,7 +39,7 @@
             Console.WriteLine("Connecting to the SQL Server...");
 
             ////SQL SERVER DATABASE
-            var sqlServerDatabase = new FurnitureSystemDbContext();
+            var sqlServerDatabase = new FurnitureSystemData();
 
             Console.WriteLine("Successfully connected to the SQL Server.");
             Console.WriteLine("Connecting to the MongoDb Server...");
@@ -90,9 +90,9 @@
             ReadFromMySqlAndSqLiteAndWriteInExcel(dataFromMySql, customerData);
         }
 
-        private static void MakeConnectionsBetweenShopsAndFurniture(FurnitureSystemDbContext sqlServerDatabase)
+        private static void MakeConnectionsBetweenShopsAndFurniture(FurnitureSystemData sqlServerDatabase)
         {
-            var shops = sqlServerDatabase.Shops;
+            var shops = sqlServerDatabase.Shops.All();
             var furniture = sqlServerDatabase.FurniturePieces;
             var randomGenerator = new Random();
 
@@ -101,14 +101,14 @@
                 for (int i = 0; i < 3; i++)
                 {
                     var index = randomGenerator.Next(1, 16);
-                    var furniturePiece = furniture.FirstOrDefault(x => x.Id == index);
+                    var furniturePiece = furniture.SearchFor(x => x.Id == index).FirstOrDefault();
                     shop.FurniturePieces.Add(furniturePiece);
                     furniturePiece.Price.Money *= 1 + shop.ProfitPercentage;
                 }
             }
         }
 
-        private static void ReadAndSaveDataFromMongoToSqlServer(FurnitureSystemDbContext sqlServerDatabase, MongoDatabase shopSystemDb)
+        private static void ReadAndSaveDataFromMongoToSqlServer(FurnitureSystemData sqlServerDatabase, MongoDatabase shopSystemDb)
         {
             if (!shopSystemDb.CollectionExists("ShopSystem"))
             {
@@ -118,7 +118,7 @@
                 seeder.SeedShops();
             }
 
-            if (sqlServerDatabase.Shops.Count() == 0)
+            if (sqlServerDatabase.Shops.All().Count() == 0)
             {
                 Console.WriteLine("Saving the data from MongoDb to the Sql Server database...");
 
@@ -148,12 +148,12 @@
             }
         }
 
-        private static void ReadAndSaveDataFromExcelToSqlServer(FurnitureSystemDbContext sqlServerDatabase)
+        private static void ReadAndSaveDataFromExcelToSqlServer(FurnitureSystemData sqlServerDatabase)
         {
             Console.WriteLine("Extracting data from the excel files...");
 
             var items = ExcelReader.GetExtractedFilesInfo(excelFilesLocation);
-            if (sqlServerDatabase.Manufacturers.Count() == 0)
+            if (sqlServerDatabase.Manufacturers.All().Count() == 0)
             {
                 Console.WriteLine("Reading and saving the data to the Sql Server...");
                 foreach (var item in items)
@@ -179,7 +179,7 @@
                         Name = item.Item1
                     };
 
-                    var existingManufacturer = sqlServerDatabase.Manufacturers.FirstOrDefault(x => x.Name == item.Item1);
+                    var existingManufacturer = sqlServerDatabase.Manufacturers.SearchFor(x => x.Name == item.Item1).FirstOrDefault();
 
                     if (existingManufacturer == null)
                     {
@@ -210,7 +210,7 @@
             }
         }
 
-        private static void ReadXmlUpdateSqlAndMongoBases(FurnitureSystemDbContext sqlServerDatabase, MongoDatabase mongoDatabase)
+        private static void ReadXmlUpdateSqlAndMongoBases(FurnitureSystemData sqlServerDatabase, MongoDatabase mongoDatabase)
         {
             Console.WriteLine("Getting new data from the xml file...");
 

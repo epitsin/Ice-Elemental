@@ -10,7 +10,7 @@
 
     public static class PdfExporter
     {
-        public static void Write(FurnitureSystemDbContext database)
+        public static void Write(FurnitureSystemData database)
         {
             var pdfReport = new Document(PageSize.A4, 10, 10, 10, 10);
 
@@ -26,7 +26,7 @@
 
             float[] widths = new float[] { 45f, 50f, 55f };
 
-            foreach (var shop in shops)
+            foreach (var shop in shops.All())
             {
                 var shopName = new PdfPTable(1);
                 shopName.AddCell(shop.Name);

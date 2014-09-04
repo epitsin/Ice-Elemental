@@ -9,13 +9,13 @@
     {
         public static string Path = "../../../XMLReports/ManufacturersReport.xml";
 
-        public static void GenerateReports(FurnitureSystemDbContext database)
+        public static void GenerateReports(FurnitureSystemData database)
         {
             var root = new XElement("manufacturers-and-their-products");
 
             var manufacturers = database.Manufacturers;
 
-            foreach (var manufacturer in manufacturers)
+            foreach (var manufacturer in manufacturers.All())
             {
                 var currentManufacturer = new XElement("manufacturer");
                 currentManufacturer.SetAttributeValue("name", manufacturer.Name);
