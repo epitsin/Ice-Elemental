@@ -30,6 +30,46 @@
             }
         }
 
+        public IGenericRepository<Location> Locations
+        {
+            get
+            {
+                return this.GetRepository<Location>();
+            }
+        }
+
+        public IGenericRepository<Manufacturer> Manufacturers
+        {
+            get
+            {
+                return this.GetRepository<Manufacturer>();
+            }
+        }
+
+        public IGenericRepository<Price> Prices
+        {
+            get
+            {
+                return this.GetRepository<Price>();
+            }
+        }
+
+        public IGenericRepository<Section> Sections
+        {
+            get
+            {
+                return this.GetRepository<Section>();
+            }
+        }
+
+        public IGenericRepository<Shop> Shops
+        {
+            get
+            {
+                return this.GetRepository<Shop>();
+            }
+        }
+
         public void SaveChanges()
         {
             this.context.SaveChanges();

@@ -1,86 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manufacturers-and-their-products>
   <manufacturer name="ARON">
-    <section name="Bathroom">
-      <product>
-        <name>ARONSink</name>
-        <price>341.48637600</price>
-      </product>
-      <product>
-        <name>ARONMirror</name>
-        <price>41.4960</price>
-      </product>
-    </section>
     <section name="Kitchen">
       <product>
-        <name>ARONChair</name>
-        <price>138.62100000</price>
+        <name>ARON Dendroid Chair</name>
+        <price>136.9060</price>
+      </product>
+    </section>
+    <section name="Bathroom">
+      <product>
+        <name>ARON Medusa Mirror</name>
+        <price>28.980</price>
+      </product>
+      <product>
+        <name>ARON Unicorn Toilet</name>
+        <price>70</price>
       </product>
     </section>
     <section name="Bedroom">
       <product>
-        <name>ARONLamp</name>
-        <price>47.970000</price>
+        <name>ARON Zombie Bed</name>
+        <price>150</price>
       </product>
       <product>
-        <name>ARONBed</name>
-        <price>150.00</price>
+        <name>ARON Vampire Lamp</name>
+        <price>43.8150</price>
       </product>
     </section>
   </manufacturer>
   <manufacturer name="IKEA">
     <section name="Kitchen">
       <product>
-        <name>IKEAChair</name>
-        <price>133.490500</price>
+        <name>IKEA Dendroid Chair</name>
+        <price>60</price>
       </product>
     </section>
     <section name="Bathroom">
       <product>
-        <name>IKEASink</name>
-        <price>254.98044000</price>
+        <name>IKEA Medusa Mirror</name>
+        <price>23.00</price>
       </product>
       <product>
-        <name>IKEAMirror</name>
-        <price>25.4000</price>
+        <name>IKEA Unicorn Toilet</name>
+        <price>154.980</price>
       </product>
     </section>
     <section name="Bedroom">
       <product>
-        <name>IKEABed</name>
-        <price>222.1800</price>
+        <name>IKEA Zombie Bed</name>
+        <price>177.120</price>
       </product>
       <product>
-        <name>IKEALamp</name>
-        <price>72.8000</price>
+        <name>IKEA Vampire Lamp</name>
+        <price>59.040</price>
       </product>
     </section>
   </manufacturer>
   <manufacturer name="Videnov">
-    <section name="Bathroom">
-      <product>
-        <name>VidenovMirror</name>
-        <price>49.394340</price>
-      </product>
-      <product>
-        <name>VidenovSink</name>
-        <price>96.707520</price>
-      </product>
-    </section>
     <section name="Kitchen">
       <product>
-        <name>VidenovTable</name>
-        <price>220.8826620000</price>
+        <name>Videnov Dendroid Chair</name>
+        <price>71.5</price>
       </product>
       <product>
-        <name>VidenovChair</name>
-        <price>173.5721395200</price>
+        <name>Videnov Unicorn Toilet</name>
+        <price>116.49330</price>
+      </product>
+    </section>
+    <section name="Bathroom">
+      <product>
+        <name>Videnov Medusa Mirror</name>
+        <price>32.5</price>
+      </product>
+      <product>
+        <name>Videnov Vampire Lamp</name>
+        <price>68.640</price>
       </product>
     </section>
     <section name="Bedroom">
       <product>
-        <name>VidenovBed</name>
-        <price>189.4200</price>
+        <name>Videnov Zombie Bed</name>
+        <price>171.8310</price>
       </product>
     </section>
   </manufacturer>
