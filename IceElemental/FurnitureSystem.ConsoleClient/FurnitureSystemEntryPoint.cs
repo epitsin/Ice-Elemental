@@ -39,7 +39,7 @@
             Console.WriteLine("Connecting to the SQL Server...");
 
             ////SQL SERVER DATABASE
-            IFurnitureSystemDbContext sqlServerDatabase = new FurnitureSystemDbContext();
+            var sqlServerDatabase = new FurnitureSystemDbContext();
 
             Console.WriteLine("Successfully connected to the SQL Server.");
             Console.WriteLine("Connecting to the MongoDb Server...");
